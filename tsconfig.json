@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "types": ["node"],
+    "paths": {
+      "@": ["./src/*"]
+    }
+  },
+  "extends": "@tsconfig/react-native/tsconfig.json"
+}
