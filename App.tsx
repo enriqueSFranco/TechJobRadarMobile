@@ -1,6 +1,6 @@
 import { StyleSheet, SafeAreaView, Platform } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
-import { NasaApp } from './src/screens/NasaApp'
+import { NasaApp } from './src/screens/RickAndMortyApp'
 
 const App: React.FC = () => {
 
