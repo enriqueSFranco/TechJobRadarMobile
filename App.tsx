@@ -1,12 +1,12 @@
 import { StyleSheet, SafeAreaView, Platform } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
-import { NasaApp } from './src/screens/RickAndMortyApp'
+import { RickAndMortyApp } from './src/screens/RickAndMortyApp'
 
 const App: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <NasaApp />
+      <RickAndMortyApp />
       <StatusBar style='auto' />
     </SafeAreaView>
   )
