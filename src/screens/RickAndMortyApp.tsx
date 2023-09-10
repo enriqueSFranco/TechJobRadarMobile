@@ -1,30 +1,30 @@
-import { useEffect, useState } from 'react'
-import { Text, View } from 'react-native'
-import { RickAndMorty } from '../shared'
-import { fetchRickAndMorty } from '../services/fetchRickAndMorty-service'
+import { useRickAndMorty } from '../hooks/useRickAndMorty'
+import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { Character } from '../components/Character'
 
-export const NasaApp = () => {
-  const [data, setData] = useState<RickAndMorty | null>(null)
-  const [loading, updatedLoading] = useState<boolean>(false)
-
-  // TODO: Pasar a un custom hook
-  useEffect(() => {
-    updatedLoading(true)
-    fetchRickAndMorty()
-      .then(response => {
-        console.log(response)
-      })
-      .catch(error => {
-        if (error instanceof Error) {
-          console.error(error.message)
-        }
-      }).finally(() => updatedLoading(false))
-  }, [])
+export const RickAndMortyApp = () => {
+  const { data, isLoading } = useRickAndMorty()
 
   return (
-    <View>
+    <View style={styles.containerApp}>
       <Text>Rick and Morty</Text>
-      {loading && <Text>Loading...</Text>}
+      {isLoading && <Text>Loading...</Text>}
+      <View>
+        {data && (
+          <FlatList
+            data={data.results}
+            renderItem={({ item }) => <Character character={item} />}
+            keyExtractor={character => character.id.toString()}
+          />
+        )}
+      </View>
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  containerApp: {
+    flex: 1,
+    backgroundColor: "#222",
+  }
+})
