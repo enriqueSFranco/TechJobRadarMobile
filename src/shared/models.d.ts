@@ -6,6 +6,7 @@ export interface Colors {
   PINK: Color
 }
 
+// RICK AND MORTY
 export interface RickAndMorty {
   info: Info
   results: Result[]
