@@ -1,22 +1,27 @@
+import { Image, StyleSheet, Text, View } from 'react-native'
+import { LinearGradient } from 'expo-linear-gradient'
 import { useRickAndMorty } from '../hooks/useRickAndMorty'
-import { FlatList, StyleSheet, Text, View } from 'react-native'
-import { Character } from '../components/Character'
+import { ListCharacter } from '../components/ListCharacter'
+import { FormSearch } from '../components/FormSearch'
 
 export const RickAndMortyApp = () => {
   const { data, isLoading } = useRickAndMorty()
 
   return (
     <View style={styles.containerApp}>
-      <Text>Rick and Morty</Text>
+      <View style={{ maxHeight: 150 }}>
+        <LinearGradient
+          colors={['rgb(187, 247, 208)', 'rgb(187, 247, 208)', 'rgb(34, 197, 94))']}
+          style={{ flex: 1, position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}
+        />
+        <Image source={require('../assets/Rick-And-Morty.png')} style={{ objectFit: 'cover', width: '100%', height: 150 }} />
+      </View>
+      {/* <Text style={{ color: '#01aeca', fontSize: 32, fontWeight: '700' }}>Rick and Morty</Text> */}
       {isLoading && <Text>Loading...</Text>}
-      <View>
-        {data && (
-          <FlatList
-            data={data.results}
-            renderItem={({ item }) => <Character character={item} />}
-            keyExtractor={character => character.id.toString()}
-          />
-        )}
+      <View style={{ flex: 1, margin: 10, gap: 8 }}>
+        <FormSearch />
+        <Text style={{ color: '#01aeca', fontSize: 22, fontWeight: '600', textTransform: 'capitalize' }}>characters</Text>
+        {data && <ListCharacter data={data.results} />}
       </View>
     </View>
   )
@@ -25,6 +30,6 @@ export const RickAndMortyApp = () => {
 const styles = StyleSheet.create({
   containerApp: {
     flex: 1,
-    backgroundColor: "#222",
+    gap: 8,
   }
 })
