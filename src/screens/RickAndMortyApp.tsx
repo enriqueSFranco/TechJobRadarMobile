@@ -16,12 +16,10 @@ export const RickAndMortyApp = () => {
         />
         <Image source={require('../assets/Rick-And-Morty.png')} style={{ objectFit: 'cover', width: '100%', height: 150 }} />
       </View>
-      {/* <Text style={{ color: '#01aeca', fontSize: 32, fontWeight: '700' }}>Rick and Morty</Text> */}
-      {isLoading && <Text>Loading...</Text>}
       <View style={{ flex: 1, margin: 10, gap: 8 }}>
         <FormSearch />
         <Text style={{ color: '#01aeca', fontSize: 22, fontWeight: '600', textTransform: 'capitalize' }}>characters</Text>
-        {data && <ListCharacter data={data.results} />}
+        {data && <ListCharacter data={data.results} loading={isLoading} />}
       </View>
     </View>
   )
