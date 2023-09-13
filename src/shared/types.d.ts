@@ -1,4 +1,4 @@
-import { Result } from "./models"
+import { Food, Result } from "./models"
 
 export type Color = `#${string}`
 
@@ -8,3 +8,5 @@ export type RootStackRiackAndMortyParams = {
   Home: undefined
   Details: Result
 }
+
+export type FoodId = Pick<Food, 'name'>
