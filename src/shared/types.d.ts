@@ -9,4 +9,4 @@ export type RootStackRiackAndMortyParams = {
   Details: Result
 }
 
-export type FoodId = Pick<Food, 'name'>
+export type FoodName = Pick<Food, 'name'>
