@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
-import { Button, StyleSheet, Text, View } from 'react-native'
+import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import { type Food as FoodType } from '../shared'
-import { Thumbnail } from '../components/Thumbnail'
-import { Header } from '../components/Header'
+import { useFoodContext } from '../hooks'
+import CaloriesCounterMainLayout from '../layouts/CaloriesCounterMainLayout'
+import { CaloriesCounterSectionLayout } from '../layouts/CaloriesCounterSectionLayout'
 import { Food } from '../components/Food'
 
 // TODO: Pasar al archivo de types
@@ -12,17 +11,11 @@ type RootStackParamList = {
   'Add Food': undefined
 }
 
-const mockFoods = [
-  { name: 'pechuga', grams: 100, kilocalories: 250 },
-  { name: 'pescado', grams: 200, kilocalories: 200 }
-]
-
 export const CaloriesCounter = () => {
-  const [stackFoods, updateStackFood] = useState<FoodType[]>(mockFoods)
   const { navigate } = useNavigation<NativeStackNavigationProp<RootStackParamList, 'Add Food'>>()
+  const { myFoods } = useFoodContext()
 
   function handleAddFood () {
-    console.log('add new food')
     navigate('Add Food')
     // const newFood: FoodType = {
     //   name: '',
@@ -34,44 +27,39 @@ export const CaloriesCounter = () => {
   }
 
   return (
-    <View>
-      <Header>
-        <View style={styles.nav}>
-          <Text style={styles.username}>Hello, Enrique</Text>
-          <Text style={styles.welcome}>Welcome back to your global</Text>
-        </View>
-        <Thumbnail uri='https://unavatar.io/github/enriqueSFranco' />
-      </Header>
+    <CaloriesCounterMainLayout>
       <View style={styles.caloriesSection}>
-        <View>
-          <Text style={styles.caloriesText}>calories</Text>
-        </View>
-        <View>
-          <Button title='add' onPress={handleAddFood} />
-        </View>
+        <Text style={styles.caloriesText}>calories</Text>
+        <Pressable onPress={handleAddFood} style={styles.button}><Text style={{ color: '#fff' }}>+</Text></Pressable>
       </View>
+
       <View>
-        <Text style={styles.foodText}>foods</Text>
-        <View>
-          {stackFoods.map(food => (
-            <Food key={`food-${food.name}`} food={food} />
-          ))}
-        </View>
+        {/* grafico de calorias */}
+
+        {/* mas informacion sobre el consumo de calorias */}
       </View>
-    </View>
+
+      <CaloriesCounterSectionLayout title='foods'>
+        <FlatList
+          data={myFoods}
+          renderItem={({ item }) => <Food food={item} isAdded />}
+          keyExtractor={item => item.name}
+        />
+      </CaloriesCounterSectionLayout>
+    </CaloriesCounterMainLayout>
   )
 }
 
 const styles = StyleSheet.create({
-  nav: {
-    gap: 4
-  },
-  username: {
-    fontWeight: '700',
-    fontSize: 16
-  },
-  welcome: {
-    color: '#6c757d',
+  button: {
+    backgroundColor: '#222',
+    borderRadius: 6,
+    padding: 4,
+    width: 35,
+    height: 35,
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 2,
   },
   caloriesSection: {
     flexDirection: 'row',

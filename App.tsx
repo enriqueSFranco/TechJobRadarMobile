@@ -2,13 +2,16 @@ import React from 'react'
 import { StyleSheet, SafeAreaView, Platform } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 import { CaloriesCounterRouter } from './src/router/CaloriesCounterRouter'
+import { FoodProvider } from './src/context/FoodContext'
 // import { RickAndMortyRouter } from './src/router/RiackAndMortyRouter'
 
 const App: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       {/* <RickAndMortyRouter /> */}
-      <CaloriesCounterRouter />
+      <FoodProvider>
+        <CaloriesCounterRouter />
+      </FoodProvider>
       <StatusBar style='auto' />
     </SafeAreaView>
   )

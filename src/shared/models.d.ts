@@ -59,6 +59,6 @@ export enum Status {
 // calories counter
 export interface Food {
   name: string
-  grams: number
-  kilocalories: number
+  grams: string
+  kilocalories: string
 }
