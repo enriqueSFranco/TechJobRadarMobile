@@ -14,6 +14,10 @@ export const Header: React.FC<HeaderProps> = ({ children }) => {
 
 const styles = StyleSheet.create({
   header: {
-    paddingTop: Platform.OS === 'android' ? 30 : 0
+    paddingTop: Platform.OS === 'android' ? 30 : 0,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: '#fff',
   }
 })
