@@ -1,8 +1,9 @@
 import React from 'react'
 import { NavigationContainer, } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { FormAddFood } from '../components/FormAddFood'
+import { AddFood } from '../screens/AddFood'
 import { CaloriesCounter } from '../screens/CaloriesCounter'
+import { View } from 'react-native'
 
 type RootStackParamList = {
   'Home': undefined
@@ -16,7 +17,7 @@ export const CaloriesCounterRouter = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen name='Home' component={CaloriesCounter} />
-        <Stack.Screen name='Add Food' component={FormAddFood} />
+        <Stack.Screen name='Add Food' component={AddFood} />
       </Stack.Navigator>
     </NavigationContainer>
   )
