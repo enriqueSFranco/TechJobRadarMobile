@@ -3,7 +3,6 @@ import { NavigationContainer, } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { AddFood } from '../screens/AddFood'
 import { CaloriesCounter } from '../screens/CaloriesCounter'
-import { View } from 'react-native'
 
 type RootStackParamList = {
   'Home': undefined
