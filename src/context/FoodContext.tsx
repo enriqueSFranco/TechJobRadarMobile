@@ -17,7 +17,7 @@ export type FoodContexType = {
   handleRemoveFood: (foodName: FoodName) => void
   handleAddToMyFoods: (food: Food) => void
   handleRemoveToMyFood: (foodName: FoodName) => void
-  handleSearch: () => void
+  handleSearch: (foodName: string) => void
 }
 
 export const FoodContext = createContext<FoodContexType | null>(null)
@@ -38,7 +38,6 @@ export function FoodProvider ({ children }: FoodProviderProps) {
   }
 
   function handleAddToMyFoods (food: Food) {
-    console.log('agregando: ', food, 'a mis comidas')
     updateMyFoods(prevMyFoods => {
       return [...prevMyFoods, food]
     })
@@ -51,8 +50,13 @@ export function FoodProvider ({ children }: FoodProviderProps) {
     })
   }
 
-  function handleSearch () {
-
+  function handleSearch (foodName: string) {
+    const lowerCaseFoodName = foodName.toLocaleLowerCase()
+    const matchedFoods = allFoods.filter((food: Food) => {
+      const lowerCaseFood = food.name.toLocaleLowerCase()
+      return lowerCaseFood.includes(lowerCaseFoodName)
+    })
+    updateAllFoods(matchedFoods)
   }
 
   const data: FoodContexType = {
