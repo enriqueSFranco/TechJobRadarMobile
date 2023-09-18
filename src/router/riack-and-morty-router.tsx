@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { RickAndMortyApp } from '../screens/RickAndMortyApp'
-import { CharacterDetails } from '../screens/CharacterDetails'
+import { RickAndMortyApp } from '../screens/rick-and-morty-app'
+import { CharacterDetails } from '../screens/character-details'
 import { RootStackRiackAndMortyParams } from '../shared'
 
 const Stack = createNativeStackNavigator<RootStackRiackAndMortyParams>()

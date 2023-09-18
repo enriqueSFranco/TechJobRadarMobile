@@ -1,8 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { Feed } from '../screens/Feed'
-import { Notifications } from '../screens/Notifications'
-import { Settings } from '../screens/Settings'
+import { Feed } from '../screens/feed'
+import { Notifications } from '../screens/notifications'
+import { Settings } from '../screens/settings'
 
 const Tab = createBottomTabNavigator()
 
