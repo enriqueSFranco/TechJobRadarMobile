@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { FlatList, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
 import { useFoodContext, useModal } from '../hooks'
 import { CaloriesCounterMainLayout, CaloriesCounterSectionLayout } from '../layouts'
-import { FormAddFood } from '../components/FormAddFood'
-import { Food } from '../components/Food'
-import { CustomModal } from '../components/Modal'
+import { FormAddFood } from '../components/form-add-food'
+import { Food } from '../components/food'
+import { CustomModal } from '../components/modal'
 
 export const AddFood = () => {
   const [query, setQuery] = useState('')

@@ -5,7 +5,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import CircularProgress from 'react-native-circular-progress-indicator'
 import { useFoodContext } from '../hooks'
 import { CaloriesCounterMainLayout, CaloriesCounterSectionLayout } from '../layouts'
-import { Food } from '../components/Food'
+import { Food } from '../components/food'
 import { calculateCalories } from '../helpers/calories-counter'
 
 // TODO: Pasar al archivo de types
