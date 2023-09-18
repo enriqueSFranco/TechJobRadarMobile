@@ -61,4 +61,5 @@ export interface Food {
   name: string
   grams: string
   kilocalories: string
+  quantity: number
 }

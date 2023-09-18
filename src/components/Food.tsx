@@ -13,6 +13,7 @@ export const Food = ({ food, isAdded = false }: FoodProps) => {
   const { name, grams, kilocalories } = food
 
   const removeFoodHandler = (food: FoodType) => () => handleRemoveToMyFood(food)
+
   const addToMyFoodsHandler = (food: FoodType) => () => handleAddToMyFoods(food)
 
 

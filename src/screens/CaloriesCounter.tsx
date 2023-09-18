@@ -4,8 +4,7 @@ import { useFocusEffect, useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import CircularProgress from 'react-native-circular-progress-indicator'
 import { useFoodContext } from '../hooks'
-import CaloriesCounterMainLayout from '../layouts/CaloriesCounterMainLayout'
-import { CaloriesCounterSectionLayout } from '../layouts/CaloriesCounterSectionLayout'
+import { CaloriesCounterMainLayout, CaloriesCounterSectionLayout } from '../layouts'
 import { Food } from '../components/Food'
 import { calculateCalories } from '../helpers/calories-counter'
 
@@ -27,7 +26,7 @@ export const CaloriesCounter = () => {
   function handleAddFood () {
     navigate('Add Food')
   }
-
+  console.log(myFoods)
   return (
     <CaloriesCounterMainLayout>
       <View style={styles.caloriesSection}>
@@ -38,9 +37,10 @@ export const CaloriesCounter = () => {
       <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', gap: 32 }}>
         {/* grafico de calorias */}
         <CircularProgress
-          value={todayCalories}
+          value={(todayCalories * 100) / 4049.38}
           duration={1000}
-          title='Kcal'
+          maxValue={4049.38}
+          valueSuffix={'%'}
           titleStyle={{ fontWeight: '700' }}
         />
         <View style={{ flex: 1, width: '100%', gap: 8 }}>

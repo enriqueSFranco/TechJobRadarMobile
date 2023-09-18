@@ -1,9 +1,9 @@
 import { createContext, useState } from "react"
 import type { Food, FoodName } from "../shared"
 
-const mockFoods = [
-  { name: 'pechuga', grams: '100', kilocalories: '250' },
-  { name: 'pescado', grams: '200', kilocalories: '200' }
+const mockFoods: Food[] = [
+  { name: 'pechuga', grams: '100', kilocalories: '250', quantity: 1 },
+  { name: 'pescado', grams: '200', kilocalories: '200', quantity: 1 }
 ]
 
 interface FoodProviderProps {
@@ -14,7 +14,7 @@ export type FoodContexType = {
   allFoods: Food[]
   myFoods: Food[]
   handleSaveFood: (food: Food) => void
-  handleRemoveFood: (foodName: FoodName) => void
+  // handleRemoveFood: (foodName: FoodName) => void
   handleAddToMyFoods: (food: Food) => void
   handleRemoveToMyFood: (foodName: FoodName) => void
   handleSearch: (foodName: string) => void
@@ -30,23 +30,34 @@ export function FoodProvider ({ children }: FoodProviderProps) {
     updateAllFoods(prevStore => [...prevStore, food])
   }
 
-  function handleRemoveFood (foodName: FoodName) {
-    updateAllFoods(prevAllFoods => {
-      prevAllFoods.filter(item => item.name !== foodName.name)
-      return prevAllFoods
-    })
-  }
+  // function handleRemoveFood (foodName: FoodName) {
+  //   updateAllFoods(prevAllFoods => {
+  //     const updatedFoods = prevAllFoods.filter(item => item.name !== foodName.name)
+  //     return updatedFoods
+  //   })
+  // }
 
   function handleAddToMyFoods (food: Food) {
     updateMyFoods(prevMyFoods => {
-      return [...prevMyFoods, food]
+      // TODO: VERIFICAR SI EXISTE EL PROPUDCTO
+      const existingFoodIndex = prevMyFoods.findIndex(it => it.name === food.name)
+      const foodAlreadyExists = existingFoodIndex >= 0
+
+      if (foodAlreadyExists) {
+        // sumar la cantidad en 1
+        const updatedMyFoods = [...prevMyFoods]
+        updatedMyFoods[existingFoodIndex].quantity += 1
+        return updatedMyFoods
+      }
+      // agregar la nueva comida
+      return [...prevMyFoods, { ...food, quantity: 1 }]
     })
   }
 
   function handleRemoveToMyFood (foodName: FoodName) {
     updateMyFoods(prevAllFoods => {
-      prevAllFoods.filter(item => item.name !== foodName.name)
-      return prevAllFoods
+      const updatedFoods = prevAllFoods.filter(item => item.name !== foodName.name)
+      return updatedFoods
     })
   }
 
@@ -63,7 +74,7 @@ export function FoodProvider ({ children }: FoodProviderProps) {
     allFoods,
     myFoods,
     handleSaveFood,
-    handleRemoveFood,
+    // handleRemoveFood,
     handleAddToMyFoods,
     handleRemoveToMyFood,
     handleSearch
