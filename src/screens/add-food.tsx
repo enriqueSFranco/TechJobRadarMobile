@@ -1,12 +1,13 @@
+import { useState } from 'react'
 import { FlatList, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
 import { useFoodContext, useModal } from '../hooks'
-import CaloriesCounterMainLayout from '../layouts/CaloriesCounterMainLayout'
-import { CaloriesCounterSectionLayout } from '../layouts/CaloriesCounterSectionLayout'
-import { FormAddFood } from '../components/FormAddFood'
-import { Food } from '../components/Food'
-import { CustomModal } from '../components/Modal'
+import { CaloriesCounterMainLayout, CaloriesCounterSectionLayout } from '../layouts'
+import { FormAddFood } from '../components/form-add-food'
+import { Food } from '../components/food'
+import { CustomModal } from '../components/modal'
 
 export const AddFood = () => {
+  const [query, setQuery] = useState('')
   const { isOpen, toggleModal } = useModal({ initialState: false })
   const { allFoods, handleSearch } = useFoodContext()
 
@@ -26,9 +27,9 @@ export const AddFood = () => {
       </View>
       {/* FORM SEARCH */}
       <View style={styles.searchSection}>
-        <TextInput style={styles.input} placeholder='chiken, fish, apple' />
+        <TextInput value={query} onChange={(e) => setQuery(e.nativeEvent.text)} placeholder='chiken, fish, apple' style={styles.input} />
         <Pressable
-          onPress={handleSearch}
+          onPress={() => handleSearch(query)}
           style={[styles.button, styles.buttonOpen, { height: 40, padding: 6 }]}
         >
           <Text style={{ color: '#fff' }}>search</Text>

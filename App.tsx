@@ -1,17 +1,21 @@
 import React from 'react'
 import { StyleSheet, SafeAreaView, Platform } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
-import { CaloriesCounterRouter } from './src/router/CaloriesCounterRouter'
-import { FoodProvider } from './src/context/FoodContext'
+import { NavigationRouter } from './src/router/navigation-router'
+// import { CaloriesCounterRouter } from './src/router/CaloriesCounterRouter'
+// import { FoodProvider } from './src/context/FoodContext'
 // import { RickAndMortyRouter } from './src/router/RiackAndMortyRouter'
 
 const App: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       {/* <RickAndMortyRouter /> */}
-      <FoodProvider>
+
+      {/* <FoodProvider>
         <CaloriesCounterRouter />
-      </FoodProvider>
+      </FoodProvider> */}
+
+      <NavigationRouter />
       <StatusBar style='auto' />
     </SafeAreaView>
   )

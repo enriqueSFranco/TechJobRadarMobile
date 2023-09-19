@@ -61,4 +61,21 @@ export interface Food {
   name: string
   grams: string
   kilocalories: string
+  quantity: number
+}
+
+// NAVIGATION APP (TWEETS)
+export interface AuthorTweet {
+  name: string
+  screenName: string,
+  avatar: string
+}
+
+export interface Tweet {
+  id: string
+  author: AuthorTweet
+  fullText: string
+  retweetCount: number
+  replyCount: number
+  favoriteCount: number
 }

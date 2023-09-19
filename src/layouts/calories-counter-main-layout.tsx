@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
-import { Thumbnail } from '../components/Thumbnail'
-import { Header } from '../components/Header'
+import { Thumbnail } from '../components/thumbnail'
+import { Header } from '../components/header'
 
 interface CaloriesCounterMainLayoutProps {
   children: React.ReactNode
 }
 
-const CaloriesCounterMainLayout = ({ children }: CaloriesCounterMainLayoutProps) => {
+export const CaloriesCounterMainLayout = ({ children }: CaloriesCounterMainLayoutProps) => {
   return (
     <View>
       <Header>
@@ -35,5 +35,3 @@ const styles = StyleSheet.create({
     color: '#6c757d',
   }
 })
-
-export default CaloriesCounterMainLayout

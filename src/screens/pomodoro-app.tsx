@@ -1,8 +1,8 @@
 import { View, Platform, Text, StyleSheet, TouchableOpacity } from "react-native"
 import { useEffect, useState } from "react"
 import { TimerType, TimerText, COLORS, type Color } from '../shared'
-import { Header } from "../components/Header"
-import { Timer } from '../components/Timer'
+import { Header } from "../components/header"
+import { Timer } from '../components/timer'
 
 const OPTIONS: TimerType[] = ['Pomodoro', 'Long Break', 'Short Break']
 

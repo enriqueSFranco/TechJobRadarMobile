@@ -1,6 +1,6 @@
 import { FlatList, Text, View } from "react-native"
 import { Result } from "@/shared"
-import { Character } from "./Character"
+import { Character } from "./character"
 
 
 interface ListCharacterProps {

@@ -8,11 +8,12 @@ interface FoodProps {
 }
 
 export const Food = ({ food, isAdded = false }: FoodProps) => {
-  const { handleRemoveFood, handleAddToMyFoods } = useFoodContext()
+  const { handleRemoveToMyFood, handleAddToMyFoods } = useFoodContext()
 
   const { name, grams, kilocalories } = food
 
-  const removeFoodHandler = (food: FoodType) => () => handleRemoveFood(food)
+  const removeFoodHandler = (food: FoodType) => () => handleRemoveToMyFood(food)
+
   const addToMyFoodsHandler = (food: FoodType) => () => handleAddToMyFoods(food)
 
 

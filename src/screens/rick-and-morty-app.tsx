@@ -1,8 +1,8 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useRickAndMorty } from '../hooks/useRickAndMorty'
-import { ListCharacter } from '../components/ListCharacter'
-import { FormSearch } from '../components/FormSearch'
+import { ListCharacter } from '../components/list-character'
+import { FormSearch } from '../components/form-search'
 
 export const RickAndMortyApp = () => {
   const { data, isLoading } = useRickAndMorty()

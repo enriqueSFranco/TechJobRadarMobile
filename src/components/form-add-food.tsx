@@ -6,7 +6,8 @@ import { useFoodContext } from '../hooks/useFoodContext'
 const INITIAL_STATE: Food = {
   name: '',
   grams: '',
-  kilocalories: ''
+  kilocalories: '',
+  quantity: 0
 }
 
 export const FormAddFood = () => {
