@@ -79,3 +79,17 @@ export interface Tweet {
   replyCount: number
   favoriteCount: number
 }
+
+// TRABAJA-YA
+export interface Job {
+  id: number
+  company: string
+  jobTitle: string
+  location: string
+  salaryMin: number
+  salaryMax: number
+  isFavorite: boolean
+  application: boolean
+  typeWork: string
+  description: string
+}

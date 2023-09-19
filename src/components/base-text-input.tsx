@@ -1,12 +1,21 @@
-import React from 'react'
-import { TextInput, View } from 'react-native'
+import { StyleSheet, TextInput, View } from 'react-native'
 
-const BaseTextInput = () => {
+export const BaseTextInput = () => {
   return (
-    <View>
-      <TextInput />
+    <View style={styles.box}>
+      <TextInput placeholder='Game Developer, Fronted Developer, Data Scient, ...' style={styles.input} />
     </View>
   )
 }
 
-export default BaseTextInput
+const styles = StyleSheet.create({
+  box: {
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    borderWidth: 0.3,
+    borderColor: '#777'
+  },
+  input: {
+    padding: 8
+  }
+})
