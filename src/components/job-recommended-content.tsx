@@ -37,7 +37,7 @@ export function JobRecommendedContent ({ data }: JobRecommendedContentProps) {
 const styles = StyleSheet.create({
   jobContainer: {
     flex: 1,
-    backgroundColor: '#eee',
+    backgroundColor: '#f4f4f4',
     padding: 12,
     borderRadius: 10,
   },
