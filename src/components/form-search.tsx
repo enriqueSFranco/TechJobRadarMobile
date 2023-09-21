@@ -1,5 +1,7 @@
 import { useState } from "react"
-import { NativeSyntheticEvent, StyleSheet, TextInput, TextInputChangeEventData, View } from "react-native"
+import { Ionicons } from '@expo/vector-icons'
+import { NativeSyntheticEvent, Pressable, StyleSheet, TextInputChangeEventData, TouchableOpacity, View } from "react-native"
+import { BaseTextInput } from "./base-text-input"
 
 export const FormSearch = () => {
   const [text, updateText] = useState('')
@@ -9,23 +11,20 @@ export const FormSearch = () => {
 
   return (
     <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        placeholder="Character name. Ex: Rick Sanchez"
-        value={text}
-        onChange={handleChangeText}
-      />
+      <Ionicons name="search" size={22} color="#222" />
+      <BaseTextInput />
+      <TouchableOpacity>
+        <Ionicons name="color-filter-outline" size={22} color="#222" />
+      </TouchableOpacity>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {},
-  input: {
-    height: 40,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    backgroundColor: '#fff',
-    padding: 10,
-  }
+  container: {
+    height: 52,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 8
+  },
 })
