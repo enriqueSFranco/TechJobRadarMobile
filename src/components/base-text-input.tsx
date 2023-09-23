@@ -1,9 +1,13 @@
 import { StyleSheet, TextInput, View } from 'react-native'
 
-export const BaseTextInput = () => {
+type BaseTextInputProps = {
+  prompt?: string
+}
+
+export const BaseTextInput = ({ prompt }: BaseTextInputProps) => {
   return (
     <View style={styles.box}>
-      <TextInput placeholder='Game Developer, Frontend Developer, ...' style={{ height: 36, paddingHorizontal: 12 }} />
+      <TextInput placeholder={prompt} style={{ height: 36, paddingHorizontal: 12 }} />
     </View>
   )
 }

@@ -1,7 +1,7 @@
-import { useState } from "react"
+import { useState } from 'react'
 import { Ionicons } from '@expo/vector-icons'
-import { NativeSyntheticEvent, Pressable, StyleSheet, TextInputChangeEventData, TouchableOpacity, View } from "react-native"
-import { BaseTextInput } from "./base-text-input"
+import { NativeSyntheticEvent, StyleSheet, TextInputChangeEventData, TouchableOpacity, View } from 'react-native'
+import { BaseTextInput } from './base-text-input'
 
 export const FormSearch = () => {
   const [text, updateText] = useState('')
@@ -11,10 +11,10 @@ export const FormSearch = () => {
 
   return (
     <View style={styles.container}>
-      <Ionicons name="search" size={22} color="#222" />
-      <BaseTextInput />
+      <Ionicons name='search' size={22} color='#222' />
+      <BaseTextInput prompt='Game Developer, Frontend Developer, ...' />
       <TouchableOpacity>
-        <Ionicons name="color-filter-outline" size={22} color="#222" />
+        <Ionicons name='color-filter-outline' size={22} color='#222' />
       </TouchableOpacity>
     </View>
   )

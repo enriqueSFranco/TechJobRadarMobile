@@ -5,7 +5,6 @@ import { Home } from '@/screens/home'
 import { Settings } from '@/screens/settings'
 import { CreateJob } from '@/screens/recruiter/create-job'
 
-// TODO: TIPAR LAS RUTAS DEL STACK NAVIGATOR
 type RootStackParamList = {
   Home: undefined
   Application: undefined
@@ -14,10 +13,15 @@ type RootStackParamList = {
 
 }
 
+const getIsSignedIn = () => {
+  return true
+}
+
 const Tab = createBottomTabNavigator<RootStackParamList>()
 
 // TODO: PASAR A UN COMPONENTE
 export function TabGroup () {
+  const isLogin = getIsSignedIn()
   return (
     <Tab.Navigator screenOptions={({ route }) => ({
       headerShown: false,
