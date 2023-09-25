@@ -1,18 +1,14 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { SvgDiscord } from './icon'
-
-interface Job {
-  id: number
-  jobTitle: string
-}
+import { Job } from '@/shared'
 
 type JobContentProps = {
   data: Job
 }
 
 export function JobContent ({ data }: JobContentProps) {
-  const { jobTitle } = data
+  const { title } = data
 
   function saveJobHandler (job: Job) {
     console.log('save: ', job)
@@ -23,7 +19,7 @@ export function JobContent ({ data }: JobContentProps) {
       {/* <Image source={{ uri: '' }} /> */}
       <SvgDiscord />
       <View style={styles.jobDetail}>
-        <Text style={styles.jobText}>{jobTitle}</Text>
+        <Text style={styles.jobText}>{title}</Text>
         <View style={[styles.jobFooter, styles.row]}>
           <Text style={styles.gray}>3hr ago</Text>
           <Text style={styles.gray}>full time</Text>
