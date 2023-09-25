@@ -41,7 +41,7 @@ export function TabGroup () {
         }
 
         if (name === 'CreateJob') {
-          iconName = focused ? 'ios-settings-sharp' : 'ios-settings-outline'
+          iconName = focused ? 'ios-create' : 'ios-create-outline'
         }
         return <Ionicons name={iconName} size={size} color={color} />
       },
