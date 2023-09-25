@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
-import jobReducer from '@/features/jobSlice'
+import jobReducer from '@/features/job-slice'
+import recruiterReducer from '@/features/recruiter-slice'
 
 export const store = configureStore({
   reducer: {
-    jobs: jobReducer
+    jobs: jobReducer,
+    recruiter: recruiterReducer
   }
 })
 
