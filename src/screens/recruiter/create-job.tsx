@@ -1,26 +1,75 @@
-import React, { useLayoutEffect } from 'react'
-import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native'
+import React, { useState } from 'react'
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native'
 import { BaseTextInput } from '@/components/base-text-input'
-import { useNavigation } from '@react-navigation/native'
+import { Dropdown } from '@/components/dropdown'
+import { EmploymentType, Job, LevelKnowledge } from '@/shared'
+
+// TODO: PASAR A CONSTANTES
+const JobCreationInitialState: Job = {
+  title: '',
+  location: '',
+  category: '',
+  description: '',
+  totalPlaces: 0,
+  minSalary: '',
+  maxSalary: '',
+  showRangeSalary: false,
+  contractType: EmploymentType.fullTime,
+  showCompanyPersonalInfo: false,
+  showRecruiterPersonalInfo: false,
+  requiredKnowledge: [],
+  skillLevel: LevelKnowledge.advanced,
+}
 
 export const CreateJob = () => {
-  const navigation = useNavigation()
+  const [form, setForm] = useState<Job>(JobCreationInitialState)
 
+  function handleSelect () { }
+
+  function handleChange (name: string, value: string) {
+    setForm({
+      ...form,
+      [name]: value,
+    })
+  }
+  console.log(form)
   return (
-    <SafeAreaView>
-      <View style={{ gap: 4 }}>
-        <BaseTextInput prompt='titulo del empleo' />
-        <Text>field</Text>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.boxInput}>
+        <Text style={styles.label}>Titulo del empleo</Text>
+        <BaseTextInput
+          prompt='Game Developer'
+          value={form.title}
+          onChange={(e) => handleChange('title', e.nativeEvent.text)}
+        />
       </View>
 
-      <View>
-        <BaseTextInput prompt='ubicacion' />
-        <Text>field</Text>
+      <View style={styles.boxInput}>
+        <Text style={styles.label}>Ubicación</Text>
+        <BaseTextInput
+          prompt='Ciudad de México'
+          value={form.location}
+          onChange={(e) => handleChange('location', e.nativeEvent.text)}
+        />
       </View>
 
-      <View>
+      <View style={styles.boxInput}>
         {/* TODO: SELECT */}
-        <Text>categoria</Text>
+        <Text style={styles.label}>Selecciona una categoria</Text>
+        <Dropdown
+          label='categoria'
+          items={[
+            { label: 'ingenieria', value: 'ingenieria' },
+            { label: 'licenciatura', value: 'licenciatura' },
+          ]}
+          onSelect={handleSelect}
+        />
       </View>
 
       <View>
@@ -81,6 +130,21 @@ export const CreateJob = () => {
     </SafeAreaView>
   )
 }
+
+const styles = StyleSheet.create({
+  boxInput: {
+    justifyContent: 'center',
+    gap: 10,
+  },
+  container: {
+    padding: 16,
+    gap: 20,
+    backgroundColor: '#fff',
+  },
+  label: {
+    fontWeight: '500',
+  },
+})
 
 /*
   titulo del empleo

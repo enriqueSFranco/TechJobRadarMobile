@@ -14,7 +14,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>()
 // TODO: PASAR A UN COMPONENTE
 export function StackGroup () {
   return (
-    <Stack.Navigator initialRouteName='TabGroup'>
+    <Stack.Navigator initialRouteName='TabGroup' screenOptions={{ headerShown: false }}>
       <Stack.Screen name='TabGroup' component={TabGroup} />
       <Stack.Screen name='JobDetail' component={JobDetail} />
     </Stack.Navigator>

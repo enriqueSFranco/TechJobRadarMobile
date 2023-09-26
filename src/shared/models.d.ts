@@ -91,11 +91,15 @@ interface Job {
   minSalary: string
   maxSalary: string
   showRangeSalary: boolean
-  contractType: EmploymentType
+  contractType: EmploymentType.fullTime | EmploymentType.partTime | EmploymentType.payroll | EmploymentType.permanent | EmploymentType.selfEmployed | EmploymentType.temporary
   showCompanyPersonalInfo: boolean
   showRecruiterPersonalInfo: boolean
   requiredKnowledge: string[]
-  skillLevel: LevelKnowledge
+  skillLevel: LevelKnowledge.beginner | LevelKnowledge.intermediate | LevelKnowledge.advanced
 }
 
-export { Job }
+interface JobWithId extends Job {
+  id: number
+}
+
+export { Job, JobWithId }

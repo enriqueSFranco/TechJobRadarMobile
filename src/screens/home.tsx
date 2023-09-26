@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from 'react'
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { AntDesign } from '@expo/vector-icons';
 import { useAppDispatch, useAppSelector } from '@/hooks/useStore'
@@ -9,7 +9,7 @@ import { Avatar } from '@/components/avatar'
 import { Job } from '@/components/job'
 import { JobRecommended } from '@/components/job-recommended'
 import { FormSearch } from '@/components/form-search'
-import { fetchAllJobs } from '@/features/jobSlice'
+import { fetchAllJobs } from '@/features/job-slice'
 import { Chip } from '@/components/chip'
 
 export const Home = () => {
@@ -30,9 +30,9 @@ export const Home = () => {
         <View style={styles.headerRight}>
           {/* notifications */}
           <Avatar image='https://unavatar.io/github/enriqueSFranco' size={42} />
-          <Chip bgColor='#f4f4f4'>
-            <Ionicons name="ios-school-outline" size={20} color="#222" />
-            <Text style={{ color: '#222', fontSize: 14 }}>ESCOM</Text>
+          <Chip bgColor='#0f6394'>
+            <Ionicons name="ios-school-outline" size={20} color="#fff" />
+            <Text style={{ color: '#fff', fontSize: 14 }}>ESCOM</Text>
           </Chip>
         </View>
         <View style={{ flexDirection: 'row', gap: 18 }}>
@@ -44,12 +44,17 @@ export const Home = () => {
           </TouchableOpacity>
         </View>
       </Header>
-      <View style={styles.mainContainer}>
+      <ScrollView style={styles.mainContainer} showsVerticalScrollIndicator={false}>
         {/* fomulario de busqueda */}
-        <FormSearch />
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 6 }}>
+          <FormSearch />
+          <TouchableOpacity style={{ backgroundColor: '#f4f4f4', padding: 8, borderRadius: 12 }}>
+            <Ionicons name='color-filter-outline' size={22} color='#222' />
+          </TouchableOpacity>
+        </View>
 
         {/* empleos populares */}
-        <SectionLayout sectionTitle='recommended jobs'>
+        <SectionLayout sectionTitle='Empleos Recomendados'>
           <FlatList
             data={jobs}
             renderItem={({ item }) => <JobRecommended job={item} />}
@@ -87,7 +92,7 @@ export const Home = () => {
             />}
 
         </SectionLayout>
-      </View>
+      </ScrollView>
     </View>
   );
 }
@@ -98,7 +103,7 @@ const styles = StyleSheet.create({
     height: StyleSheet.hairlineWidth,
     backgroundColor: '#DDD',
   },
-  mainContainer: { flex: 1, gap: 16, padding: 16, backgroundColor: '#fff' },
+  mainContainer: { flex: 1, padding: 16, backgroundColor: '#fff' },
   headerRight: {
     flexDirection: 'row',
     alignItems: 'center',
