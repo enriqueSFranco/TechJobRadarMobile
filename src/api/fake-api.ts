@@ -1,10 +1,10 @@
 import db from '@/api/db.json'
-import { type Job } from "@/shared"
+import { type JobWithId } from "@/shared"
 
 const { jobs } = db
 
 export const api = {
-  list: (): Promise<Job[]> => {
+  list: (): Promise<JobWithId[]> => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(jobs)
