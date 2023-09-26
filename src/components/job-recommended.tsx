@@ -18,8 +18,8 @@ export function JobRecommended ({ job }: JobRecommendedProps) {
 
 
   return (
-    <Pressable onPress={handleRedirect}>
-      <JobRecommendedContent data={job} />
-    </Pressable>
+    <JobRecommendedContent data={job} />
+    // <Pressable onPress={handleRedirect} style={{ height: 100 }}>
+    // </Pressable>
   )
 }

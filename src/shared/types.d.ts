@@ -10,3 +10,5 @@ export type RootStackRiackAndMortyParams = {
 }
 
 export type FoodName = Pick<Food, 'name'>
+
+export type HexadecimalColor = `#${string}`
