@@ -4,12 +4,18 @@ import { SvgDiscord } from '../components/icon'
 import { Job } from '../shared'
 import { Chip } from './chip'
 
-
-const KNOWLEDGE_COLORS = {
-  javascript: '#F7DF1E',
-  react: '#61DAFB',
-  nodejs: '#339933'
+type KnowledgeColor = {
+  backgroundColor: `#${string}`
+  color: `#${string}`
 }
+
+const Knowledge: Record<string, KnowledgeColor> = {
+  javascript: { backgroundColor: '#F7DF1E', color: '#222' },
+  react: { backgroundColor: '#139ECA', color: '#fff' },
+  nodejs: { backgroundColor: '#339933', color: '#fff' }
+}
+
+console.log(Knowledge['javascript'].backgroundColor)
 
 type JobRecommendedContentProps = {
   data: Job
@@ -40,7 +46,18 @@ export function JobRecommendedContent ({ data }: JobRecommendedContentProps) {
       </View>
 
       <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-        {requiredKnowledge.map(knowlegde => <Chip key={knowlegde} bgColor={KNOWLEDGE_COLORS[knowlegde.toLocaleLowerCase()] ?? '#eded'}><Text>{knowlegde}</Text></Chip>)}
+        {requiredKnowledge.map(knowlegde => {
+          const knowlegdeLowerCase = knowlegde.toLocaleLowerCase()
+          console.log('->', knowlegdeLowerCase)
+          return (
+            <Chip
+              key={knowlegde}
+
+            >
+              <Text>{knowlegde}</Text>
+            </Chip>
+          )
+        })}
       </View>
     </View>
   )

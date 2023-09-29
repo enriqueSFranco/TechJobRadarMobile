@@ -1,8 +1,9 @@
 import { useEffect, useMemo } from 'react'
-import { FlatList, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, ScrollView, Text, TouchableOpacity, View } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons'
 import { useAppDispatch, useAppSelector } from '@/hooks/useStore'
+import { styles } from '@/styles/home'
 import { SectionLayout } from '@/layouts/section-layout'
 import { Header } from '@/components/header'
 import { Avatar } from '@/components/avatar'
@@ -44,7 +45,7 @@ export const Home = () => {
           </TouchableOpacity>
         </View>
       </Header>
-      <ScrollView style={styles.mainContainer} showsVerticalScrollIndicator={false}>
+      <View style={styles.mainContainer}>
         {/* fomulario de busqueda */}
         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 6 }}>
           <FormSearch />
@@ -64,6 +65,7 @@ export const Home = () => {
                 <Text>Lo sentimos, aun no hay vacantes recomendadas.</Text>
               </View>
             }
+            ItemSeparatorComponent={() => <View style={{ width: 16, backgroundColor: 'transparent' }} />}
             horizontal
             showsHorizontalScrollIndicator={false}
           />
@@ -90,27 +92,8 @@ export const Home = () => {
               ItemSeparatorComponent={() => <View style={[styles.divider]} />}
               showsVerticalScrollIndicator={false}
             />}
-
         </SectionLayout>
-      </ScrollView>
+      </View>
     </View>
-  );
+  )
 }
-
-const styles = StyleSheet.create({
-  divider: {
-    width: '100%',
-    height: StyleSheet.hairlineWidth,
-    backgroundColor: '#DDD',
-  },
-  mainContainer: { flex: 1, padding: 16, backgroundColor: '#fff' },
-  headerRight: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 10
-  },
-  welcomeText: {
-    fontWeight: '600',
-    fontSize: 18
-  },
-})

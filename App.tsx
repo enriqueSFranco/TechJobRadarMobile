@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { store } from './src/store/index'
+import { store } from './src/redux/store'
 import { StyleSheet, SafeAreaView, Platform } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 import { TrabajaYa } from './src/screens/trabaja-ya'
