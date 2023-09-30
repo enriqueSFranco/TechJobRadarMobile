@@ -1,21 +1,13 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { SvgDiscord } from '../components/icon'
-import { Job } from '../shared'
+import { Job, Knowledge } from '../shared'
 import { Chip } from './chip'
 
-type KnowledgeColor = {
-  backgroundColor: `#${string}`
-  color: `#${string}`
+function cleanString ({ input, charactersToRemove = /[.\s_-]/ }: { input: string, charactersToRemove?: RegExp }) {
+  const cleanedString = input.toLowerCase().replace(charactersToRemove, '')
+  return cleanedString
 }
-
-const Knowledge: Record<string, KnowledgeColor> = {
-  javascript: { backgroundColor: '#F7DF1E', color: '#222' },
-  react: { backgroundColor: '#139ECA', color: '#fff' },
-  nodejs: { backgroundColor: '#339933', color: '#fff' }
-}
-
-console.log(Knowledge['javascript'].backgroundColor)
 
 type JobRecommendedContentProps = {
   data: Job
@@ -47,14 +39,13 @@ export function JobRecommendedContent ({ data }: JobRecommendedContentProps) {
 
       <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
         {requiredKnowledge.map(knowlegde => {
-          const knowlegdeLowerCase = knowlegde.toLocaleLowerCase()
-          console.log('->', knowlegdeLowerCase)
+          const cleanedKnowledge = cleanString({ input: knowlegde })
           return (
             <Chip
               key={knowlegde}
-
+              bgColor={Knowledge[cleanedKnowledge]?.backgroundColor || '#eee'}
             >
-              <Text>{knowlegde}</Text>
+              <Text style={{ color: Knowledge[cleanedKnowledge]?.color || '#222' }}>{knowlegde}</Text>
             </Chip>
           )
         })}
