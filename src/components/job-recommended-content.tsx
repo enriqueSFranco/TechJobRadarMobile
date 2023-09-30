@@ -1,13 +1,9 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
-import { SvgDiscord } from '../components/icon'
 import { Job, Knowledge } from '../shared'
+import { cleanString } from '@/helpers/clean-string'
+import { SvgDiscord } from '../components/icon'
 import { Chip } from './chip'
-
-function cleanString ({ input, charactersToRemove = /[.\s_-]/ }: { input: string, charactersToRemove?: RegExp }) {
-  const cleanedString = input.toLowerCase().replace(charactersToRemove, '')
-  return cleanedString
-}
 
 type JobRecommendedContentProps = {
   data: Job

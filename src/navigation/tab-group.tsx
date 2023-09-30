@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Ionicons } from '@expo/vector-icons'
-import { Application } from '@/screens/application'
-import { Home } from '@/screens/home'
+import { Application } from '@/screens/candidate/application'
+import { Home } from '@/screens/app/home'
 import { Settings } from '@/screens/settings'
 import { CreateJob } from '@/screens/recruiter/create-job'
 

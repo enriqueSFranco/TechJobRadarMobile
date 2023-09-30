@@ -1,4 +1,4 @@
-import { CaloriesCounterMainLayout } from "./calories-counter-main-layout"
-import { CaloriesCounterSectionLayout } from "./calories-counter-section-layout"
+import { CardJobLayout } from "./card-job-layout"
+import { SectionLayout } from "./section-layout"
 
-export { CaloriesCounterMainLayout, CaloriesCounterSectionLayout }
+export { CardJobLayout, SectionLayout }

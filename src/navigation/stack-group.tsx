@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { Job } from '@/shared'
 import { TabGroup } from './tab-group'
-import { JobDetail } from '@/screens/job-detail'
+import { JobDetail } from '@/screens/app/job-detail'
 
 // TODO: TIPAR LAS RUTAS DEL STACK NAVIGATOR
 type RootStackParamList = {
