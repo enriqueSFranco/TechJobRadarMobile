@@ -7,19 +7,19 @@ const enum ThemeName {
 
 type Theme = ThemeName.Light | ThemeName.Dark
 
-type ThemeContextType = {
-  theme: Theme
-  toggle: () => void
-}
 
 type ThemeProviderProps = {
   children: React.ReactNode
 }
 
+export type ThemeContextType = {
+  theme: Theme
+  toggle: () => void
+}
+
 export const ThemeContext = createContext<ThemeContextType | null>(null)
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-
   const [theme, updateTheme] = useState<Theme>(ThemeName.Light)
 
   function toggle () {

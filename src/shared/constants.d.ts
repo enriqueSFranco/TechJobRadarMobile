@@ -1,20 +1,6 @@
-import { Colors } from './models.d'
+import type { Colors, Job } from './models.d'
 import { KnowledgeColor } from './types.d'
-
-// POMODORO
-export const COLORS: Colors = {
-  PURPLE: '#8093f1',
-  FIUSHA: '#b388eb',
-  PINK: '#f7aef8'
-}
-
-// RICK AND MORTY
-export const STATUS_COLOR = {
-  'Alive': '#3FC387',
-  'Dead': '#d53c2e',
-  'unknown': '#9e9e9e'
-} as const
-
+import { EmploymentType, LevelKnowledge } from './enums.d'
 
 const Knowledge: Record<string, KnowledgeColor> = {
   javascript: { backgroundColor: '#F7DF1E', color: '#222' },
@@ -34,4 +20,20 @@ const Knowledge: Record<string, KnowledgeColor> = {
   kubernetes: { backgroundColor: '#326CE5', color: "#fff" }
 }
 
-export { Knowledge }
+const JobCreationInitialState: Job = {
+  title: '',
+  location: '',
+  category: '',
+  description: '',
+  totalPlaces: 0,
+  minSalary: '',
+  maxSalary: '',
+  showRangeSalary: false,
+  contractType: EmploymentType.fullTime,
+  showCompanyPersonalInfo: false,
+  showRecruiterPersonalInfo: false,
+  requiredKnowledge: [],
+  skillLevel: LevelKnowledge.advanced,
+}
+
+export { Knowledge, JobCreationInitialState }
