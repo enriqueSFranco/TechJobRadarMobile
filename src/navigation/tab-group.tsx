@@ -4,13 +4,14 @@ import { Application } from '@/screens/candidate/application'
 import { Home } from '@/screens/app/home'
 import { Settings } from '@/screens/settings'
 import { CreateJob } from '@/screens/recruiter/create-job'
+import { Login } from '@/screens/login/login'
 
 type RootStackParamList = {
   Home: undefined
   Application: undefined
   Settings: undefined
   CreateJob: undefined
-
+  Login: undefined
 }
 
 const getIsSignedIn = () => {
@@ -43,6 +44,10 @@ export function TabGroup () {
         if (name === 'CreateJob') {
           iconName = focused ? 'ios-create' : 'ios-create-outline'
         }
+
+        if (name === 'Login') {
+          iconName = focused ? 'log-out' : 'log-in-outline'
+        }
         return <Ionicons name={iconName} size={size} color={color} />
       },
       tabBarActiveTintColor: '#222',
@@ -52,6 +57,7 @@ export function TabGroup () {
       <Tab.Screen name="Application" component={Application} />
       <Tab.Screen name="Settings" component={Settings} />
       <Tab.Screen name='CreateJob' component={CreateJob} />
+      <Tab.Screen name='Login' component={Login} />
     </Tab.Navigator>
   )
 }

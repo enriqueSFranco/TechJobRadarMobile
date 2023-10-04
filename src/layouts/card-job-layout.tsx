@@ -1,5 +1,5 @@
 import { View } from 'react-native'
-import { styles } from '../styles/card-job-layout-styles'
+import { styles } from '../styles/card-job-layout'
 
 type CardJobLayoutProps = {
   children: React.ReactNode
