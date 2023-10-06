@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { SafeAreaView, Text, View } from "react-native"
 import { BaseTextInput } from "@/components/base-text-input"
+import { useForm } from "@/hooks/useForm"
 
 type FormLogin = {
   email: string
@@ -13,24 +14,36 @@ const INITIAL_FORM: FormLogin = {
 }
 
 export const Login = () => {
-  const [form, updateForm] = useState<FormLogin>(INITIAL_FORM)
+  const [showPassword, updateShowPassword] = useState(false)
+  const { form, handleChange } = useForm<FormLogin>(INITIAL_FORM)
 
-  function handleChange () {
-
+  function toggle () {
+    updateShowPassword(prevState => !prevState)
   }
 
   return (
-    <SafeAreaView>
-      <Text>Login</Text>
-      <View>
-        <View>
-          <BaseTextInput prompt="correo electronico" value={form.email} onChange={handleChange} />
-        </View>
-        <View>
-          <BaseTextInput prompt="contraseña" value={form.password} onChange={handleChange} />
-        </View>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
+      <Text>¡te damos la vienvenida a trabajaYa!</Text>
+      <View style={{ gap: 16 }}>
+        <BaseTextInput
+          label="correo electronico"
+          prompt="user@gmail.com"
+          value={form.email}
+          onChange={e => handleChange('email', e.nativeEvent.text)} />
+        <BaseTextInput
+          label="contraseña"
+          secureTextEntry
+          value={form.password}
+          onChange={e => handleChange('password', e.nativeEvent.text)}
+        />
       </View>
       {/* TODO: SEPARATOR */}
+      <View style={{ width: '100%', flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+        <View style={{ flex: 1, height: 1, backgroundColor: '#ccc', borderRadius: 50 }} />
+        <Text>o</Text>
+        <View style={{ flex: 1, height: 1, backgroundColor: '#ccc', borderRadius: 50 }} />
+      </View>
+
       <View>
         {/* OR LOGIN WITH SOCIAL NETWOR */}
       </View>

@@ -1,21 +1,26 @@
-import { NativeSyntheticEvent, StyleSheet, TextInput, TextInputChangeEventData, View } from 'react-native'
+import { NativeSyntheticEvent, StyleSheet, TextInput, TextInputChangeEventData, Text, View, TextInputProps } from 'react-native'
 
 
 type BaseTextInputProps = {
   prompt?: string
+  label?: string
   value: string
+  icon?: React.ReactNode
   onChange: (e: NativeSyntheticEvent<TextInputChangeEventData>) => void
 }
 
-export const BaseTextInput = ({ prompt, value, onChange }: BaseTextInputProps) => {
+export const BaseTextInput = ({ prompt, label, value, icon, onChange, ...rest }: BaseTextInputProps & TextInputProps) => {
   return (
-    <View style={styles.box}>
+    <View style={[styles.box, { gap: label !== undefined ? 8 : 0 }]}>
+      {label !== undefined ? <Text>{label}</Text> : null}
       <TextInput
         placeholder={prompt}
         value={value}
         onChange={onChange}
-        style={{ height: 36, paddingHorizontal: 12 }}
+        {...rest}
+        style={{ borderWidth: 0.5, borderColor: '#777', borderRadius: 4, paddingVertical: 14, paddingHorizontal: 8 }}
       />
+      {icon !== undefined ? icon : null}
     </View>
   )
 }
@@ -23,7 +28,6 @@ export const BaseTextInput = ({ prompt, value, onChange }: BaseTextInputProps) =
 const styles = StyleSheet.create({
   box: {
     backgroundColor: '#fff',
-    height: 50,
-    justifyContent: 'center'
+    justifyContent: 'center',
   }
 })
