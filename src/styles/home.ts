@@ -6,7 +6,11 @@ export const styles = StyleSheet.create({
     height: StyleSheet.hairlineWidth,
     backgroundColor: '#DDD',
   },
-  mainContainer: { flex: 1, padding: 16, backgroundColor: '#fff' },
+  mainContainer: {
+    flex: 1,
+    padding: 16,
+    backgroundColor: '#fff'
+  },
   headerRight: {
     flexDirection: 'row',
     alignItems: 'center',
