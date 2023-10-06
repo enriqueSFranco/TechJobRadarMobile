@@ -1,7 +1,9 @@
-import { useState } from "react"
-import { SafeAreaView, Text, View } from "react-native"
-import { BaseTextInput } from "@/components/base-text-input"
-import { useForm } from "@/hooks/useForm"
+import { useState } from 'react'
+import { SafeAreaView, Text, View } from 'react-native'
+import { Feather } from '@expo/vector-icons'
+import { BaseTextInput } from '@/components/base-text-input'
+import { useForm } from '@/hooks/useForm'
+import { Button } from '@/components/button'
 
 type FormLogin = {
   email: string
@@ -20,22 +22,28 @@ export const Login = () => {
   function toggle () {
     updateShowPassword(prevState => !prevState)
   }
-
+  console.log(showPassword)
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
-      <Text>¡te damos la vienvenida a trabajaYa!</Text>
+      <Text>¡te damos la vienvenida a trabajaYa! 👋</Text>
       <View style={{ gap: 16 }}>
         <BaseTextInput
-          label="correo electronico"
-          prompt="user@gmail.com"
+          label='Correo electronico'
+          prompt='jhondue@gmail.com'
           value={form.email}
           onChange={e => handleChange('email', e.nativeEvent.text)} />
         <BaseTextInput
-          label="contraseña"
-          secureTextEntry
+          label='Contraseña'
+          prompt='Escribe tu constraseña'
+          icon={showPassword
+            ? <Feather name='eye-off' size={22} color="#222" onPress={toggle} accessibilityLabel='icon eye off' />
+            : <Feather name='eye' size={22} color='#222' onPress={toggle} accessibilityLabel='icon eye on' />
+          }
+          secureTextEntry={showPassword}
           value={form.password}
           onChange={e => handleChange('password', e.nativeEvent.text)}
         />
+        <Button label='Iniciar sesión' />
       </View>
       {/* TODO: SEPARATOR */}
       <View style={{ width: '100%', flexDirection: 'row', alignItems: 'center', gap: 12 }}>
@@ -46,6 +54,10 @@ export const Login = () => {
 
       <View>
         {/* OR LOGIN WITH SOCIAL NETWOR */}
+      </View>
+
+      <View>
+        {/* DON'T HAVE AN ACCOUNT */}
       </View>
     </SafeAreaView>
   )

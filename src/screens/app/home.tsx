@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from 'react'
-import { FlatList, ScrollView, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, Text, TouchableOpacity, View } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { AntDesign } from '@expo/vector-icons'
 import { useAppDispatch, useAppSelector } from '@/hooks/useStore'
@@ -31,9 +31,9 @@ export const Home = () => {
         <View style={styles.headerRight}>
           {/* notifications */}
           <Avatar image='https://unavatar.io/github/enriqueSFranco' size={42} />
-          <Chip bgColor='#0f6394'>
-            <Ionicons name="ios-school-outline" size={20} color="#fff" />
-            <Text style={{ color: '#fff', fontSize: 14 }}>ESCOM</Text>
+          <Chip bgColor='#ade8f4'>
+            <Ionicons name="ios-school-outline" size={20} color="#0077b6" />
+            <Text style={{ color: '#0077b6', fontSize: 14 }}>ESCOM</Text>
           </Chip>
         </View>
         <View style={{ flexDirection: 'row', gap: 18 }}>
