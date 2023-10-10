@@ -1,4 +1,5 @@
 import { useLayoutEffect } from 'react'
+import { Ionicons } from '@expo/vector-icons'
 import {
   ScrollView,
   StyleSheet,
@@ -6,17 +7,16 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native'
-import { Ionicons } from '@expo/vector-icons'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
-import { Job } from '@/shared'
+import { JobWithId } from '@/shared'
 import { SvgDiscord } from '@/components/icon'
 import { Chip } from '@/components/chip'
 import { Divider } from '@/components/divider'
 
 type RootStackParamList = {
   TabGroup: undefined
-  JobDetail: Job
+  JobDetail: JobWithId
 }
 
 type Props = NativeStackScreenProps<RootStackParamList, 'JobDetail'>['route']
@@ -27,41 +27,42 @@ export const JobDetail = () => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerTitle: params.jobTitle,
+      headerTitle: params.title,
     })
   }, [])
 
   const {
-    jobTitle,
-    company,
+    title,
+    category,
+    contractType,
     description,
     location,
-    salaryMax,
-    salaryMin,
-    typeWork,
+    maxSalary,
+    minSalary,
+    totalPlaces
   } = params
 
   function handleApply () {
-    console.log('me postule a la vacante: ', jobTitle)
+    console.log('me postule a la vacante: ', title)
   }
 
   return (
     <View style={styles.jobDetailsScreen}>
       <View style={{ alignItems: 'center', gap: 10 }}>
         <SvgDiscord />
-        <Text style={styles.companyName}>{company}</Text>
+        <Text style={styles.companyName}>{category}</Text>
         <Text style={styles.jobTitle}>
-          {jobTitle}
+          {title}
         </Text>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <Chip bgColor='#ededed'>
-            <Text style={{ color: '#222', fontSize: 13 }}>{typeWork}</Text>
+            <Text style={{ color: '#222', fontSize: 13 }}>{contractType}</Text>
           </Chip>
           <Chip bgColor='#ededed'>
-            <Text style={{ color: '#222', fontSize: 13 }}>{typeWork}</Text>
+            <Text style={{ color: '#222', fontSize: 13 }}>{contractType}</Text>
           </Chip>
           <Chip bgColor='#ededed'>
-            <Text style={{ color: '#222', fontSize: 13 }}>{typeWork}</Text>
+            <Text style={{ color: '#222', fontSize: 13 }}>{contractType}</Text>
           </Chip>
         </ScrollView>
       </View>
@@ -73,7 +74,7 @@ export const JobDetail = () => {
 
       <View style={styles.footer}>
         <TouchableOpacity
-          accessibilityLabel={`Apply for job ${jobTitle}`}
+          accessibilityLabel={`Apply for job ${title}`}
           onPress={handleApply}
           style={styles.applyButton}
         >

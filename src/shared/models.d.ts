@@ -1,4 +1,5 @@
 import { Color } from './types.d'
+import { EmploymentType, LevelKnowledge } from './enums'
 
 export interface Colors {
   PURPLE: Color,
@@ -81,15 +82,24 @@ export interface Tweet {
 }
 
 // TRABAJA-YA
-export interface Job {
-  id: number
-  company: string
-  jobTitle: string
+interface Job {
+  title: string
   location: string
-  salaryMin: number
-  salaryMax: number
-  isFavorite: boolean
-  application: boolean
-  typeWork: string
+  category: string
   description: string
+  totalPlaces: number
+  minSalary: string
+  maxSalary: string
+  showRangeSalary: boolean
+  contractType: EmploymentType.fullTime | EmploymentType.partTime | EmploymentType.payroll | EmploymentType.permanent | EmploymentType.selfEmployed | EmploymentType.temporary
+  showCompanyPersonalInfo: boolean
+  showRecruiterPersonalInfo: boolean
+  requiredKnowledge: string[]
+  skillLevel: LevelKnowledge.beginner | LevelKnowledge.intermediate | LevelKnowledge.advanced
 }
+
+interface JobWithId extends Job {
+  id: number
+}
+
+export { Job, JobWithId }

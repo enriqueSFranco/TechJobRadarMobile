@@ -1,28 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { View } from 'react-native'
 import { HexadecimalColor } from '@/shared'
+import { styles } from '@/styles/chip'
 
 type ChipProps = {
   children: React.ReactNode
-  bgColor: HexadecimalColor
+  bgColor?: HexadecimalColor
 }
 
-export const Chip = ({ children, bgColor }: ChipProps) => {
+export const Chip = ({ children, bgColor = '#eee' }: ChipProps) => {
   return (
     <View style={[styles.chipContainer, { backgroundColor: bgColor }]}>
       {children}
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  chipContainer: {
-    borderRadius: 50,
-    paddingHorizontal: 10,
-    paddingVertical: 6,
-    marginRight: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 6
-  }
-})

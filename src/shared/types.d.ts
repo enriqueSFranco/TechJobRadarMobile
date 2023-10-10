@@ -1,14 +1,8 @@
-import { Food, Result } from "./models"
+type HexadecimalColor = `#${string}`
 
-export type Color = `#${string}`
-
-export type TimerType = 'Pomodoro' | 'Long Break' | 'Short Break'
-
-export type RootStackRiackAndMortyParams = {
-  Home: undefined
-  Details: Result
+type KnowledgeColor = {
+  backgroundColor: HexadecimalColor
+  color: HexadecimalColor
 }
 
-export type FoodName = Pick<Food, 'name'>
-
-export type HexadecimalColor = `#${string}`
+export { HexadecimalColor, KnowledgeColor }

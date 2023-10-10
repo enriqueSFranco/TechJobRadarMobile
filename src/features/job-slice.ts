@@ -1,9 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import type { Job } from '@/shared'
+import type { JobWithId } from '@/shared'
 import { api } from '@/api/fake-api'
 
-type JobSliceState = { jobs: Job[] | null, loading: boolean }
+type JobSliceState = { jobs: JobWithId[] | null, loading: boolean }
 
 const initialState: JobSliceState = {
   jobs: null,
@@ -28,7 +28,7 @@ const jobSlice = createSlice({
     builder.addCase(fetchAllJobs.pending, (state, action) => {
       state.loading = true
     }),
-      builder.addCase(fetchAllJobs.fulfilled, (state, action: PayloadAction<Job[]>) => {
+      builder.addCase(fetchAllJobs.fulfilled, (state, action: PayloadAction<JobWithId[]>) => {
         state.loading = false
         state.jobs = action.payload
       }),

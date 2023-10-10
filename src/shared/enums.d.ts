@@ -1,5 +1,22 @@
-export enum TimerText {
-  POMODORO = 'Pomodoro',
-  LONG_BREAK = 'Long Break',
-  SHORT_BREAK = 'Short Break'
+enum User {
+  Candidate = 'candidate',
+  Recruiter = 'recruiter',
+  Admin = 'admin'
 }
+
+enum EmploymentType {
+  fullTime = 'fullTime',
+  permanent = 'permanent',
+  payroll = 'payroll',
+  partTime = 'partTime',
+  temporary = 'temporary',
+  selfEmployed = 'selfEmployed',
+}
+
+enum LevelKnowledge {
+  beginner = 'beginner',
+  intermediate = 'intermediate',
+  advanced = 'advanced',
+}
+
+export { EmploymentType, LevelKnowledge, User }

@@ -1,28 +1,18 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { store } from './src/store/index'
 import { StyleSheet, SafeAreaView, Platform } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
+import { store } from './src/redux/store'
 import { TrabajaYa } from './src/screens/trabaja-ya'
-
-// import { NavigationRouter } from './src/router/navigation-router'
-// import { CaloriesCounterRouter } from './src/router/CaloriesCounterRouter'
-// import { FoodProvider } from './src/context/FoodContext'
-// import { RickAndMortyRouter } from './src/router/RiackAndMortyRouter'
-
+import { ThemeProvider } from './src/context/ThemeContext'
 
 const App: React.FC = () => {
   return (
     <SafeAreaView style={styles.app}>
-      {/* <RickAndMortyRouter /> */}
-
-      {/* <FoodProvider>
-        <CaloriesCounterRouter />
-      </FoodProvider> */}
-
-      {/* <NavigationRouter /> */}
       <Provider store={store}>
-        <TrabajaYa />
+        <ThemeProvider>
+          <TrabajaYa />
+        </ThemeProvider>
       </Provider>
       <StatusBar style='auto' />
     </SafeAreaView>
