@@ -1,6 +1,12 @@
 import type { Colors, Job } from './models.d'
 import { KnowledgeColor } from './types.d'
-import { EmploymentType, LevelKnowledge } from './enums.d'
+import { EmploymentType, LevelKnowledge, User } from './enums.d'
+
+const TYPE_USER = {
+  ADMIN: User.Admin,
+  CANDIDATE: User.Candidate,
+  RECRUITER: User.Recruiter
+} as const
 
 const Knowledge: Record<string, KnowledgeColor> = {
   javascript: { backgroundColor: '#F7DF1E', color: '#222' },
@@ -36,4 +42,4 @@ const JobCreationInitialState: Job = {
   skillLevel: LevelKnowledge.advanced,
 }
 
-export { Knowledge, JobCreationInitialState }
+export { Knowledge, JobCreationInitialState, TYPE_USER }

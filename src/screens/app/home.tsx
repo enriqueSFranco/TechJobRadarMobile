@@ -18,7 +18,6 @@ export const Home = () => {
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    console.log('Efecto de carga de trabajos')
     dispatch(fetchAllJobs())
   }, [dispatch])
 
@@ -27,9 +26,7 @@ export const Home = () => {
   return (
     <View style={{ flex: 1 }}>
       <Header>
-        {/* <Text style={styles.welcomeText}>Hola, Enrique!👋</Text> */}
         <View style={styles.headerRight}>
-          {/* notifications */}
           <Avatar image='https://unavatar.io/github/enriqueSFranco' size={42} />
           <Chip bgColor='#ade8f4'>
             <Ionicons name="ios-school-outline" size={20} color="#0077b6" />

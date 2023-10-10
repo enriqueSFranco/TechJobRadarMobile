@@ -1,10 +1,9 @@
-export enum TimerText {
-  POMODORO = 'Pomodoro',
-  LONG_BREAK = 'Long Break',
-  SHORT_BREAK = 'Short Break'
+enum User {
+  Candidate = 'candidate',
+  Recruiter = 'recruiter',
+  Admin = 'admin'
 }
 
-// TODO: PASAR A ENUMS
 enum EmploymentType {
   fullTime = 'fullTime',
   permanent = 'permanent',
@@ -14,11 +13,10 @@ enum EmploymentType {
   selfEmployed = 'selfEmployed',
 }
 
-// TODO: PASAR A ENUMS
 enum LevelKnowledge {
   beginner = 'beginner',
   intermediate = 'intermediate',
   advanced = 'advanced',
 }
 
-export { EmploymentType, LevelKnowledge }
+export { EmploymentType, LevelKnowledge, User }
