@@ -1,27 +1,24 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, TouchableOpacityProps, View } from 'react-native'
 import { HexadecimalColor } from '@/shared'
 
 type ButtonProps = {
   children?: React.ReactNode
-  label: string
-  bgColor?: HexadecimalColor
+  label?: string
+  bgColor?: HexadecimalColor | string
   color?: HexadecimalColor
 }
 
-export const Button = ({ label, bgColor = '#222', color = '#fff', children }: ButtonProps) => {
-  const buttonWithChildrenClassName = children != null ? '' : ''
-
+export const Button = ({ label, bgColor = '#222', color = '#fff', children, ...rest }: ButtonProps & TouchableOpacityProps) => {
   return (
-    <TouchableOpacity style={[styles.button, { backgroundColor: bgColor }]}>
-      {children != null ? <View>{children}</View> : null}
-      <Text style={{ color }}>{label}</Text>
+    <TouchableOpacity style={[styles.button, { backgroundColor: bgColor }]} {...rest}>
+      {children != null ? <View style={{ alignItems: 'center', justifyContent: 'center' }}>{children}</View> : null}
+      {label !== undefined ? <Text style={{ color }}>{label}</Text> : null}
     </TouchableOpacity>
   )
 }
 
 const styles = StyleSheet.create({
   button: {
-    width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
