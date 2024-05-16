@@ -1,7 +1,7 @@
 import { Image, Text, TouchableOpacity, View } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { styles } from '@/styles/card-job'
-import { CardJobLayout } from '@/layouts/card-job-layout'
+import { CardJobLayout } from '@/layouts/card-job'
 import { color } from '@/styles/colors'
 import { SvgDiscord } from './icon'
 import { Job } from '@/shared'
