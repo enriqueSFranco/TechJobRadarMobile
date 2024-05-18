@@ -1,19 +1,10 @@
 import React from 'react'
-import { Provider } from 'react-redux'
 import { StyleSheet, SafeAreaView, Platform } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
-import { store } from './src/redux/store'
-import { TrabajaYa } from './src/screens/trabaja-ya'
-import { ThemeProvider } from './src/context/ThemeContext'
 
 const App: React.FC = () => {
   return (
     <SafeAreaView style={styles.app}>
-      <Provider store={store}>
-        <ThemeProvider>
-          <TrabajaYa />
-        </ThemeProvider>
-      </Provider>
       <StatusBar style='auto' />
     </SafeAreaView>
   )
