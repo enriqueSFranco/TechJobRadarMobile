@@ -1,22 +1,29 @@
-import React from 'react'
-import { StyleSheet, SafeAreaView, Platform } from 'react-native'
-import { StatusBar } from 'expo-status-bar'
+import { StyleSheet, Platform } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
+import { Users } from "./components/pages/Users";
 
+// El componente <View></View> es display: flex por defecto
+// El componente <Button /> no se puede estilar
+// Pressable, este compomente siver para crear botones personalizados
 const App: React.FC = () => {
   return (
-    <SafeAreaView style={styles.app}>
-      <StatusBar style='auto' />
-    </SafeAreaView>
-  )
-}
+    <SafeAreaProvider style={styles.app}>
+      <StatusBar style="auto" />
+      <Users />
+    </SafeAreaProvider>
+  );
+};
 
 const styles = StyleSheet.create({
   app: {
     flex: 1,
-    padding: 16,
-    paddingTop: Platform.OS === 'android' ? 30 : 0,
-    backgroundColor: '#fff'
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 16,
+    paddingTop: Platform.OS === "android" ? 30 : 0,
+    backgroundColor: "#fff",
   },
-})
+});
 
-export default App
+export default App;
