@@ -1,20 +1,14 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import { Colors } from "@/shared/constants.d";
-
-type PizzaType = {
-  id: number;
-  name: string;
-  image: string;
-  price: number;
-};
+import { Pizza } from "@/shared/types.d";
 
 type CardPizzaProps = {
-  pizza: PizzaType;
+  pizza: Pizza;
 };
 
 export const CardPizza = ({ pizza }: CardPizzaProps) => {
   return (
-    <View>
+    <View style={styles.container}>
       <Image source={{ uri: pizza.image }} style={styles.image} />
       <Text>{pizza.name}</Text>
       <Text style={styles.price}>{pizza.price}</Text>
@@ -23,6 +17,13 @@ export const CardPizza = ({ pizza }: CardPizzaProps) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    maxWidth: "50%",
+    backgroundColor: Colors.light.background,
+    padding: 10,
+    borderRadius: 8,
+  },
   image: {
     width: "100%",
     aspectRatio: 1,
