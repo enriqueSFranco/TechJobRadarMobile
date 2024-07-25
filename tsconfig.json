@@ -2,7 +2,9 @@
   "compilerOptions": {
     "types": ["node"],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@assets/*": ["./assets/*"]
     }
   },
   "extends": "@tsconfig/react-native/tsconfig.json",
