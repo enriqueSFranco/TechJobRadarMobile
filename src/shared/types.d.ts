@@ -1,30 +1,28 @@
 // types
-export type User = {
+export const OrderStatusList: OrderStatus[] = [
+  "New",
+  "Cooking",
+  "Delivering",
+  "Delivered",
+];
+
+export type OrderStatus = "New" | "Cooking" | "Delivering" | "Delivered";
+
+export type Order = {
   id: number;
-  name: string;
-  username: string;
-  email: string;
-  address: Address;
-  phone: string;
-  website: string;
-  company: Company;
+  created_at: string;
+  total: number;
+  user_id: string;
+  status: OrderStatus;
+
+  order_items?: OrderItem[];
 };
 
-export type Address = {
-  street: string;
-  suite: string;
-  city: string;
-  zipcode: string;
-  geo: Geo;
-};
-
-export type Geo = {
-  lat: string;
-  lng: string;
-};
-
-export type Company = {
-  name: string;
-  catchPhrase: string;
-  bs: string;
+export type OrderItem = {
+  id: number;
+  product_id: number;
+  products: Product;
+  order_id: number;
+  size: PizzaSize;
+  quantity: number;
 };
