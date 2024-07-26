@@ -1,4 +1,5 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text } from "react-native";
+import { Link } from "expo-router";
 import { Colors } from "@/shared/constants.d";
 import { Pizza } from "@/shared/types.d";
 
@@ -8,11 +9,17 @@ type CardPizzaProps = {
 
 export const CardPizza = ({ pizza }: CardPizzaProps) => {
   return (
-    <View style={styles.container}>
-      <Image source={{ uri: pizza.image }} style={styles.image} />
-      <Text>{pizza.name}</Text>
-      <Text style={styles.price}>{pizza.price}</Text>
-    </View>
+    <Link href="/pizza-detail" asChild>
+      <Pressable style={styles.container}>
+        <Image
+          source={{ uri: pizza.image }}
+          style={styles.image}
+          resizeMode="cover"
+        />
+        <Text>{pizza.name}</Text>
+        <Text style={styles.price}>{pizza.price}</Text>
+      </Pressable>
+    </Link>
   );
 };
 
