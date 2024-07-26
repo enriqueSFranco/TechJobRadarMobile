@@ -1,14 +1,15 @@
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { Slot } from "expo-router";
+import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { Platform, StyleSheet } from "react-native";
+import { Colors } from "@/shared/constants.d";
 
 export default function Layout() {
   return (
     <SafeAreaProvider style={styles.app}>
       <StatusBar style="auto" />
-      <Slot />
+      <Stack />
     </SafeAreaProvider>
   );
 }
