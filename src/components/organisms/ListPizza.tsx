@@ -1,7 +1,6 @@
 import { Pizza } from "@/shared/types";
 import { FlatList } from "react-native";
 import { CardPizza } from "./CardPizza";
-import { Stack } from "expo-router";
 
 type ListPizzaProps = {
   pizzas: Pizza[];
