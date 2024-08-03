@@ -9,7 +9,7 @@ type CardPizzaProps = {
 
 export const CardPizza = ({ pizza }: CardPizzaProps) => {
   return (
-    <Link href={`/${pizza.id}`} asChild>
+    <Link href={`/menu/${pizza.id}`} asChild>
       <Pressable style={styles.container}>
         <Image
           source={{ uri: pizza.image }}
