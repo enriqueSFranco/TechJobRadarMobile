@@ -2,7 +2,6 @@ import {
   Pressable,
   PressableProps,
   StyleProp,
-  StyleSheet,
   Text,
   TextStyle,
   ViewStyle,
@@ -11,8 +10,6 @@ import {
 type ButtonPressableProps = PressableProps & {
   text: string;
   textStyle?: StyleProp<TextStyle>;
-  color?: `#${string}`; // TODO: Create type hexadecimal
-  bgColor?: `#${string}`;
   style?: StyleProp<ViewStyle>;
 };
 
@@ -20,10 +17,11 @@ export function ButtonPressable({
   text,
   textStyle,
   style,
+  ...pressableProps
 }: ButtonPressableProps) {
   return (
-    <Pressable style={[style, defaultButtonStyle]}>
-      <Text style={[textStyle, defaultTextStyle]}>{text}</Text>
+    <Pressable style={[defaultButtonStyle, style]} {...pressableProps}>
+      <Text style={[defaultTextStyle, textStyle]}>{text}</Text>
     </Pressable>
   );
 }
