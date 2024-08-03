@@ -14,6 +14,7 @@ export default function PizzaDetail() {
 
   function handleSelectPizzaSize({ size }: { size: PizzaSize }) {
     console.log(`seleccionaste la pizza de tamaño ${size}`);
+    setPizzaSize(size);
   }
 
   if (!pizza) {
@@ -38,23 +39,41 @@ export default function PizzaDetail() {
         style={{ width: "100%", aspectRatio: 1 }}
       />
       <Text>{pizza.name}</Text>
-      <FlatList
-        data={pizzaSizeLabels}
-        renderItem={({ item }) => (
-          <ButtonPressable
-            key={`pizza-size-${item}`}
-            text={item}
-            onPress={() => handleSelectPizzaSize({ size: item })}
-            style={{ width: 20, height: 20 }}
-          />
-        )}
-        keyExtractor={(item) => item}
-        numColumns={4}
-        contentContainerStyle={{ gap: 10 }}
-        columnWrapperStyle={{ gap: 10 }}
-      />
-      <Text>{pizza.price}</Text>
-      <ButtonPressable text="Add to cart" />
+      <View style={{ flex: 1, gap: 10, height:'auto' }}>
+        <Text>Select size</Text>
+        <FlatList
+          data={pizzaSizeLabels}
+          renderItem={({ item }) => {
+            const activeBackgroundColor =
+              item === pizzaSize ? "#212529" : "#e9ecef";
+            const activeTextColor = item === pizzaSize ? "#e9ecef" : "#212529";
+            return (
+              <ButtonPressable
+                text={item}
+                onPress={() => handleSelectPizzaSize({ size: item })}
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: 50,
+                  backgroundColor: activeBackgroundColor,
+                }}
+                textStyle={{ color: activeTextColor }}
+              />
+            );
+          }}
+          keyExtractor={(item) => item}
+          numColumns={4}
+          contentContainerStyle={{ gap: 10 }}
+          columnWrapperStyle={{
+            width: "100%",
+            gap: 10,
+            alignItems: "center",
+            justifyContent: "space-around",
+          }}
+        />
+      </View>
+      <Text>Price {pizza.price}</Text>
+      <ButtonPressable text="Add to cart" style={{ width: "100%" }} />
     </View>
   );
 }
