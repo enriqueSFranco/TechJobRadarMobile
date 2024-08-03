@@ -1,3 +1,5 @@
+import { PizzaSize } from "./enums.d";
+
 // constatnes de la app
 const tintColorLight = "#2f95dc";
 const tintColorDark = "#fff";
@@ -17,3 +19,10 @@ export const Colors = {
     tabIconSelected: tintColorDark,
   },
 };
+
+export const pizzaSizeLabels = [
+  PizzaSize.SMALL,
+  PizzaSize.MEDIUM,
+  PizzaSize.LARGE,
+  PizzaSize.EXTRA_LARGE,
+];
