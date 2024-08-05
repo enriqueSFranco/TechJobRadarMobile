@@ -26,3 +26,11 @@ export const pizzaSizeLabels = [
   PizzaSize.LARGE,
   PizzaSize.EXTRA_LARGE,
 ];
+
+// textos de la app
+export const TEXTS = {
+  pizzaNotFound: "Pizza not found",
+  selectSize: "Select size",
+  priceLabel: "Price",
+  addToCart: "Add to cart",
+};
