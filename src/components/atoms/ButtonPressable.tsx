@@ -8,7 +8,7 @@ import {
 } from "react-native";
 
 type ButtonPressableProps = PressableProps & {
-  text: string;
+  text: string | React.ReactNode;
   textStyle?: StyleProp<TextStyle>;
   style?: StyleProp<ViewStyle>;
 };
