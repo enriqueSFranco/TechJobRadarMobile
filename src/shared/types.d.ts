@@ -1,18 +1,29 @@
 // types
 
+export type PizzaSize = "S" | "M" | "L" | "XL";
+
+export type Pizza = {
+  id: number;
+  name: string;
+  image: string;
+  price: number | string;
+  size: PizzaSize;
+};
+
+export type CartItem = {
+  id: string;
+  product: Product;
+  product_id: number;
+  size: PizzaSize;
+  quantity: number;
+};
+
 export const OrderStatusList: OrderStatus[] = [
   "New",
   "Cooking",
   "Delivering",
   "Delivered",
 ];
-
-export type Pizza = {
-  id: number;
-  name: string;
-  image: string;
-  price: number;
-};
 
 export type OrderStatus = "New" | "Cooking" | "Delivering" | "Delivered";
 
@@ -33,4 +44,9 @@ export type OrderItem = {
   order_id: number;
   size: PizzaSize;
   quantity: number;
+};
+
+export type Profile = {
+  id: string;
+  group: string;
 };
