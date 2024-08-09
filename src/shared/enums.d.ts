@@ -5,3 +5,8 @@ export enum PizzaSize {
   LARGE = "L",
   EXTRA_LARGE = "XL",
 }
+
+export enum QuantityChange {
+  Increment = 1,
+  Decrement = -1,
+}
