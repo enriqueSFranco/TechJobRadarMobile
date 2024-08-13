@@ -16,7 +16,7 @@ export default function Layout () {
           },
         }}
       >
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="(user)" options={{ headerShown: false }} />
         <Stack.Screen name="cart" options={{ presentation: "modal" }} />
       </Stack>
     </ShoppingCartProvider>
