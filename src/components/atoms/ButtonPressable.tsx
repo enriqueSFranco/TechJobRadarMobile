@@ -2,40 +2,34 @@ import {
   Pressable,
   PressableProps,
   StyleProp,
+  StyleSheet,
   Text,
   TextStyle,
   ViewStyle,
 } from "react-native";
 
 type ButtonPressableProps = PressableProps & {
-  text: string | React.ReactNode;
+  text: string;
   textStyle?: StyleProp<TextStyle>;
   style?: StyleProp<ViewStyle>;
 };
 
-export function ButtonPressable({
+export const ButtonPressable = ({
   text,
   textStyle,
   style,
-  ...pressableProps
-}: ButtonPressableProps) {
+  ...props
+}: ButtonPressableProps) => {
   return (
-    <Pressable style={[defaultButtonStyle, style]} {...pressableProps}>
-      <Text style={[defaultTextStyle, textStyle]}>{text}</Text>
+    <Pressable {...props} style={[styles.defaultButton, style]}>
+      <Text style={textStyle}>{text}</Text>
     </Pressable>
   );
-}
-
-const defaultButtonStyle: ViewStyle = {
-  backgroundColor: "#222",
-  borderRadius: 6,
-  width: 100,
-  height: 50,
-  justifyContent: "center",
-  alignItems: "center",
 };
 
-const defaultTextStyle: TextStyle = {
-  color: "#fff",
-  fontSize: 16,
-};
+const styles = StyleSheet.create({
+  defaultButton: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});

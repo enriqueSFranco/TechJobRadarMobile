@@ -1,22 +1,21 @@
 import { CartItem } from "@/shared/types.d";
 import { Image, StyleSheet, Text, View } from "react-native";
-import { ButtonPressable } from "../atoms/ButtonPressable";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import AntDesign from "@expo/vector-icons/AntDesign";
 import { Colors } from "@/shared/constants.d";
 import { formatMoney } from "@/helpers/format-money";
+import { QuantityChange } from "@/shared/enums.d";
+import { IconButton } from "../atoms/icon-button";
+import { useShoppingCart } from "@/hooks/useShoppingCart";
 
 type CardPizzaOrderProps = {
   order: CartItem;
-  onIncrease: () => void;
-  onDecrease: () => void;
 };
 
-export function CardPizzaOrder ({
-  order,
-  onIncrease,
-  onDecrease,
-}: CardPizzaOrderProps) {
+export function CardPizzaOrder ({ order }: CardPizzaOrderProps) {
+  const { updateQuantity } = useShoppingCart();
   const { product, quantity, size } = order;
-  const { image, name, price } = product;
+  const { image, name, price, id } = product;
   const formattedPrice = formatMoney({ value: price });
 
   return (
@@ -32,19 +31,21 @@ export function CardPizzaOrder ({
         </View>
       </View>
       <View style={styles.controlsContainer}>
-        <ButtonPressable
-          text="+"
-          onPress={onIncrease}
-          style={styles.button}
-          textStyle={styles.buttonText}
-        />
+        <IconButton
+          onPress={() =>
+            updateQuantity(String(id), QuantityChange.Increment, size)
+          }
+        >
+          <MaterialIcons name="add" size={18} color="black" />
+        </IconButton>
         <Text>{quantity}</Text>
-        <ButtonPressable
-          text="-"
-          onPress={onDecrease}
-          style={styles.button}
-          textStyle={styles.buttonText}
-        />
+        <IconButton
+          onPress={() =>
+            updateQuantity(String(id), QuantityChange.Decrement, size)
+          }
+        >
+          <AntDesign name="minus" size={18} color="black" />
+        </IconButton>
       </View>
     </View>
   );
@@ -52,6 +53,7 @@ export function CardPizzaOrder ({
 
 const styles = StyleSheet.create({
   container: {
+    width: "100%",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",

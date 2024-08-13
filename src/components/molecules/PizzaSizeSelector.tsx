@@ -1,9 +1,9 @@
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import { ButtonPressable } from "../atoms/ButtonPressable";
 import { PizzaSize } from "@/shared/enums.d";
-import { Colors } from "@/shared/constants.d";
+import { Colors, TEXTS } from "@/shared/constants.d";
 
-function getButtonStyles({
+function getButtonStyles ({
   selectedPizzaSize,
   pizzaSize,
 }: {
@@ -25,42 +25,51 @@ type PizzaSizeSelectorProps = {
   onSelectedPizzaSize: (pizzaSize: PizzaSize) => void;
 };
 
-export function PizzaSizeSelector({
+export function PizzaSizeSelector ({
   pizzaSizes,
   stateFulPizzaSize,
   onSelectedPizzaSize,
 }: PizzaSizeSelectorProps) {
   return (
-    <FlatList
-      data={pizzaSizes}
-      renderItem={({ item }: { item: PizzaSize }) => {
-        const [buttonStyle, textStyle] = getButtonStyles({
-          selectedPizzaSize: item,
-          pizzaSize: stateFulPizzaSize,
-        });
-        return (
-          <ButtonPressable
-            text={item}
-            onPress={() => onSelectedPizzaSize(item)}
-            style={[
-              {
-                backgroundColor: buttonStyle,
-              },
-              styles.buttonStyle,
-            ]}
-            textStyle={{ color: textStyle }}
-          />
-        );
-      }}
-      keyExtractor={(item) => item}
-      numColumns={4}
-      contentContainerStyle={{ gap: 10 }}
-      columnWrapperStyle={styles.columnWrapper}
-    />
+    <View style={styles.container}>
+      <Text>{TEXTS.selectSize}</Text>
+      <FlatList
+        data={pizzaSizes}
+        renderItem={({ item }: { item: PizzaSize }) => {
+          const [buttonStyle, textStyle] = getButtonStyles({
+            selectedPizzaSize: item,
+            pizzaSize: stateFulPizzaSize,
+          });
+          return (
+            <ButtonPressable
+              text={item}
+              onPress={() => onSelectedPizzaSize(item)}
+              style={[
+                {
+                  backgroundColor: buttonStyle,
+                },
+                styles.buttonStyle,
+              ]}
+              textStyle={{ color: textStyle }}
+            />
+          );
+        }}
+        keyExtractor={(item) => item}
+        numColumns={4}
+        contentContainerStyle={{ gap: 10 }}
+        columnWrapperStyle={styles.columnWrapper}
+      />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    width: "100%",
+    justifyContent: "flex-start",
+    alignContent: "flex-start",
+    gap: 12,
+  },
   buttonStyle: {
     width: 40,
     height: 40,
