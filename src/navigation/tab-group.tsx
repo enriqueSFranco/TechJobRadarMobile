@@ -2,10 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Ionicons } from '@expo/vector-icons'
 import { Application } from '@/screens/candidate/application'
 import { TYPE_USER, User } from '@/shared'
-import { Home } from '@/screens/app/home'
-import { Settings } from '@/screens/settings'
-import { CreateJob } from '@/screens/recruiter/create-job'
-import { Login } from '@/screens/login/login'
+import { Home } from '@/screens/home'
 
 const DEFAULT_USER_ROLE: User = TYPE_USER.CANDIDATE
 

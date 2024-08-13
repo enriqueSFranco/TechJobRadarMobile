@@ -1,8 +1,51 @@
-type HexadecimalColor = `#${string}`
+// types
 
-type KnowledgeColor = {
-  backgroundColor: HexadecimalColor
-  color: HexadecimalColor
-}
+export type PizzaSize = "S" | "M" | "L" | "XL";
 
-export { HexadecimalColor, KnowledgeColor }
+export type Pizza = {
+  id: number;
+  name: string;
+  image: string;
+  price: number | string;
+};
+
+export type CartItem = {
+  id: string;
+  product: Pizza;
+  product_id: number;
+  size: PizzaSize;
+  quantity: number;
+};
+
+export const OrderStatusList: OrderStatus[] = [
+  "New",
+  "Cooking",
+  "Delivering",
+  "Delivered",
+];
+
+export type OrderStatus = "New" | "Cooking" | "Delivering" | "Delivered";
+
+export type Order = {
+  id: number;
+  created_at: string;
+  total: number;
+  user_id: string;
+  status: OrderStatus;
+
+  order_items?: OrderItem[];
+};
+
+export type OrderItem = {
+  id: number;
+  product_id: number;
+  products: Product;
+  order_id: number;
+  size: PizzaSize;
+  quantity: number;
+};
+
+export type Profile = {
+  id: string;
+  group: string;
+};
