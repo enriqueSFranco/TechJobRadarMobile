@@ -1,14 +1,14 @@
 import { Tabs } from "expo-router";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
-function TabBarIcon(props: {
+function TabBarIcon (props: {
   name: React.ComponentProps<typeof MaterialIcons>["name"];
   color: string;
 }) {
   return <MaterialIcons size={24} {...props} />;
 }
 
-export default function TabLayout() {
+export default function TabLayout () {
   return (
     <Tabs>
       <Tabs.Screen
@@ -22,14 +22,6 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen name="index" options={{ href: null }} />
-
-      <Tabs.Screen
-        name="settings"
-        options={{
-          title: "Settings",
-          tabBarIcon: ({ color }) => <TabBarIcon name="list" color={color} />,
-        }}
-      />
     </Tabs>
   );
 }
