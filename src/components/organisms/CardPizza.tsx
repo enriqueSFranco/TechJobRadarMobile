@@ -1,15 +1,19 @@
 import { Image, Pressable, StyleSheet, Text } from "react-native";
-import { Link } from "expo-router";
+import { Link, useSegments } from "expo-router";
 import { Colors } from "@/shared/constants.d";
 import { Pizza } from "@/shared/types.d";
+import { formatMoney } from "@/helpers/format-money";
 
 type CardPizzaProps = {
   pizza: Pizza;
 };
 
 export const CardPizza = ({ pizza }: CardPizzaProps) => {
+  const segments = useSegments();
+  const formattedPrice = formatMoney({ value: pizza.price });
+
   return (
-    <Link href={`/menu/${pizza.id}`} asChild>
+    <Link href={`${segments[0]}/menu/${pizza.id}`} asChild>
       <Pressable style={styles.container}>
         <Image
           source={{ uri: pizza.image }}
@@ -17,7 +21,7 @@ export const CardPizza = ({ pizza }: CardPizzaProps) => {
           resizeMode="cover"
         />
         <Text>{pizza.name}</Text>
-        <Text style={styles.price}>{pizza.price}</Text>
+        <Text style={styles.price}>{formattedPrice}</Text>
       </Pressable>
     </Link>
   );
