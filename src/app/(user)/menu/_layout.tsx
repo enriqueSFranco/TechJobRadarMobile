@@ -1,7 +1,6 @@
 import { Link, Stack } from "expo-router";
-// import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import { ButtonPressable } from "@/components/atoms/ButtonPressable";
-import { Text } from "react-native";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import { Pressable } from "react-native";
 
 export default function MenuStack () {
   return (
@@ -12,15 +11,15 @@ export default function MenuStack () {
           title: "Menu",
           headerRight: () => (
             <Link href="/cart" asChild>
-              <Text>cart</Text>
-              {/* <ButtonPressable
-                text="cart"
+              <Pressable
                 style={{
                   backgroundColor: "transparent",
                   width: "auto",
                   height: "auto",
                 }}
-              /> */}
+              >
+                <MaterialIcons name="shopping-cart" size={24} color="black" />
+              </Pressable>
             </Link>
           ),
         }}
