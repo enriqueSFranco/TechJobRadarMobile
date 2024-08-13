@@ -1,22 +1,12 @@
-enum User {
-  Candidate = 'candidate',
-  Recruiter = 'recruiter',
-  Admin = 'admin'
+// enums
+export enum PizzaSize {
+  SMALL = "S",
+  MEDIUM = "M",
+  LARGE = "L",
+  EXTRA_LARGE = "XL",
 }
 
-enum EmploymentType {
-  fullTime = 'fullTime',
-  permanent = 'permanent',
-  payroll = 'payroll',
-  partTime = 'partTime',
-  temporary = 'temporary',
-  selfEmployed = 'selfEmployed',
+export enum QuantityChange {
+  Increment = 1,
+  Decrement = -1,
 }
-
-enum LevelKnowledge {
-  beginner = 'beginner',
-  intermediate = 'intermediate',
-  advanced = 'advanced',
-}
-
-export { EmploymentType, LevelKnowledge, User }
