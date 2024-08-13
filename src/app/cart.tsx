@@ -6,27 +6,15 @@ import { styles as globalStyles } from "@/styles/globalStyles";
 
 export default function Cart () {
   const { cart } = useShoppingCart();
-  function handleIncrease () {
-    console.log("agregar otros pizza");
-  }
-  function handleDecrease () {
-    console.log("eliminar pizza");
-  }
 
   return (
     <View style={globalStyles.container}>
-      <Text>my orders</Text>
       <StatusBar style={Platform.OS === "ios" ? "light" : "auto"} />
       <FlatList
         data={cart}
-        renderItem={({ item }) => (
-          <CardPizzaOrder
-            order={item}
-            onIncrease={handleIncrease}
-            onDecrease={handleDecrease}
-          />
-        )}
+        renderItem={({ item }) => <CardPizzaOrder order={item} />}
         keyExtractor={(item) => item.id}
+        contentContainerStyle={{ gap: 10 }}
       />
     </View>
   );
