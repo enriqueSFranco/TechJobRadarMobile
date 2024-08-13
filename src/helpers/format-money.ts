@@ -7,7 +7,7 @@ type FormatMoneArgs = {
 export function formatMoney ({
   value,
   locale = "en-US",
-  options = {},
+  options = { style: "currency", currency: "USD" },
 }: FormatMoneArgs): string {
   const numericValue = validateAndConvertToNumber(value);
   return new Intl.NumberFormat(locale, options).format(numericValue);
