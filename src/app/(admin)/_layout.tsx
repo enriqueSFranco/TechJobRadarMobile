@@ -1,12 +1,12 @@
 import { Tabs } from "expo-router";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Colors } from "@/shared/constants.d";
 
 function TabBarIcon (props: {
-  name: React.ComponentProps<typeof MaterialIcons>["name"];
+  name: React.ComponentProps<typeof FontAwesome>["name"];
   color: string;
 }) {
-  return <MaterialIcons size={24} {...props} />;
+  return <FontAwesome size={24} {...props} />;
 }
 
 export default function TabLayout () {
@@ -24,9 +24,7 @@ export default function TabLayout () {
         name="menu"
         options={{
           headerShown: false,
-          tabBarIcon: ({ color }) => (
-            <TabBarIcon name="restaurant" color={color} />
-          ),
+          tabBarIcon: ({ color }) => <TabBarIcon name="list" color={color} />,
         }}
       />
 
