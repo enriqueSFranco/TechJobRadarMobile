@@ -1,5 +1,5 @@
 import { Link, Stack } from "expo-router";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Pressable } from "react-native";
 
 export default function MenuStack () {
@@ -18,7 +18,21 @@ export default function MenuStack () {
                   height: "auto",
                 }}
               >
-                <MaterialIcons name="add-box" size={24} color="black" />
+                <FontAwesome name="plus-square-o" size={24} color="black" />
+              </Pressable>
+            </Link>
+          ),
+        }}
+      />
+
+      <Stack.Screen
+        name="[id]"
+        options={{
+          title: "Menu",
+          headerRight: () => (
+            <Link href="" asChild>
+              <Pressable>
+                <FontAwesome name="edit" size={24} color="black" />
               </Pressable>
             </Link>
           ),
