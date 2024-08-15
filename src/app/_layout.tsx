@@ -7,6 +7,7 @@ export default function Layout () {
     <ShoppingCartProvider>
       <Stack
         screenOptions={{
+          title: "Pizza Planet 🍕",
           headerStyle: {
             backgroundColor: Colors.dark.background,
           },
@@ -17,6 +18,7 @@ export default function Layout () {
         }}
       >
         <Stack.Screen name="(user)" options={{ headerShown: false }} />
+        <Stack.Screen name="(admin)" options={{ headerShown: false }} />
         <Stack.Screen name="cart" options={{ presentation: "modal" }} />
       </Stack>
     </ShoppingCartProvider>
