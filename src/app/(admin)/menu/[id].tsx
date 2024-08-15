@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { router, Stack, useLocalSearchParams } from "expo-router";
-import { ButtonPressable } from "@/components/atoms/ButtonPressable";
-import { PizzaSizeSelector } from "@/components/molecules/PizzaSizeSelector";
-import { PizzaNotFound } from "@/components/molecules/PizzaNotFound";
+import { PizzaNotFound } from "@/features/ui/molecules/pizza-not-found";
 import { styles as globalStyles } from "@/styles/globalStyles";
 import { PizzaSize } from "@/shared/enums.d";
 import pizzas from "@assets/data/products";
 import { Colors, pizzaSizeLabels, TEXTS } from "@/shared/constants.d";
 import { formatMoney } from "@/helpers/format-money";
 import { useShoppingCart } from "@/hooks/useShoppingCart";
+import { PizzaSizeSelector } from "@/features/ui/molecules/pizza-size-selector";
+import { ButtonPressable } from "@/features/ui/atoms/button-pressable";
 
 export default function PizzaDetail () {
   const [pizzaSize, setPizzaSize] = useState<PizzaSize>(PizzaSize.MEDIUM);
@@ -58,7 +58,7 @@ export default function PizzaDetail () {
       {/* Button add to cart*/}
       <ButtonPressable
         onPress={handleAddToCart}
-        text={TEXTS.addToCart}
+        text="Update"
         style={{
           width: "100%",
           backgroundColor: Colors.dark.background,
