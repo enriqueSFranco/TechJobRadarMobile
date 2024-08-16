@@ -2,15 +2,15 @@ import { useState } from "react";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { Link, router, Stack, useLocalSearchParams } from "expo-router";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import { ButtonPressable } from "@/components/atoms/ButtonPressable";
-import { PizzaSizeSelector } from "@/components/molecules/PizzaSizeSelector";
-import { PizzaNotFound } from "@/components/molecules/PizzaNotFound";
+import { PizzaNotFound } from "@/features/ui/molecules/pizza-not-found";
 import { styles as globalStyles } from "@/styles/globalStyles";
 import { PizzaSize } from "@/shared/enums.d";
 import pizzas from "@assets/data/products";
 import { Colors, pizzaSizeLabels, TEXTS } from "@/shared/constants.d";
 import { formatMoney } from "@/helpers/format-money";
 import { useShoppingCart } from "@/hooks/useShoppingCart";
+import { PizzaSizeSelector } from "@/features/ui/molecules/pizza-size-selector";
+import { ButtonPressable } from "@/features/ui/atoms/button-pressable";
 
 export default function PizzaDetail () {
   const [pizzaSize, setPizzaSize] = useState<PizzaSize>(PizzaSize.MEDIUM);
@@ -41,19 +41,6 @@ export default function PizzaDetail () {
       <Stack.Screen
         options={{
           title: pizza.name,
-          headerRight: () => (
-            <Link href="/cart" asChild>
-              <Pressable
-                style={{
-                  backgroundColor: "transparent",
-                  width: "auto",
-                  height: "auto",
-                }}
-              >
-                <MaterialIcons name="shopping-cart" size={24} color="black" />
-              </Pressable>
-            </Link>
-          ),
         }}
       />
       {/* Pizza image and name */}
