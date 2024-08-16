@@ -9,7 +9,7 @@ type CardPizzaProps = {
 };
 
 export const CardPizza = ({ pizza }: CardPizzaProps) => {
-  const segments = useSegments();
+  const segments = useSegments(); // nos ayuda a verificar en que pantalla nos encontramos, si es de (user) | (admin)
   const formattedPrice = formatMoney({ value: pizza.price });
 
   return (
