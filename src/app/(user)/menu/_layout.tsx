@@ -1,5 +1,5 @@
 import { Link, Stack } from "expo-router";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Pressable } from "react-native";
 
 export default function MenuStack () {
@@ -18,7 +18,26 @@ export default function MenuStack () {
                   height: "auto",
                 }}
               >
-                <MaterialIcons name="shopping-cart" size={24} color="black" />
+                <FontAwesome name="shopping-cart" size={24} color="black" />
+              </Pressable>
+            </Link>
+          ),
+        }}
+      />
+
+      <Stack.Screen
+        name="[id]"
+        options={{
+          headerRight: () => (
+            <Link href="/cart" asChild>
+              <Pressable
+                style={{
+                  backgroundColor: "transparent",
+                  width: "auto",
+                  height: "auto",
+                }}
+              >
+                <FontAwesome name="shopping-cart" size={24} color="black" />
               </Pressable>
             </Link>
           ),
