@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { Colors } from "@/shared/constants.d";
-import { formatMoney } from "@/helpers/format-money";
+import { PriceUtils } from "@/utils/PriceUtils";
 import { QuantityChange } from "@/shared/enums.d";
 import { IconButton } from "../atoms/icon-button";
 import { useShoppingCart } from "@/hooks/useShoppingCart";
@@ -16,7 +16,7 @@ export function CardPizzaOrder ({ order }: CardPizzaOrderProps) {
   const { updateQuantity } = useShoppingCart();
   const { product, quantity, size } = order;
   const { image, name, price, id } = product;
-  const formattedPrice = formatMoney({ value: price });
+  const formattedPrice = PriceUtils.formatMoney({ value: price });
 
   return (
     <View style={styles.container}>
