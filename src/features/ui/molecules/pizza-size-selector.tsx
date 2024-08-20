@@ -1,5 +1,5 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import { ButtonPressable } from "../atoms/ButtonPressable";
+import { ButtonPressable } from "../atoms/button-pressable";
 import { PizzaSize } from "@/shared/enums.d";
 import { Colors, TEXTS } from "@/shared/constants.d";
 

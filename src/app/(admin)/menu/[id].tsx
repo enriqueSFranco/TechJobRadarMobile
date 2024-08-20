@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-import { Link, router, Stack, useLocalSearchParams } from "expo-router";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import { Image, StyleSheet, Text, View } from "react-native";
+import { router, Stack, useLocalSearchParams } from "expo-router";
 import { PizzaNotFound } from "@/features/ui/molecules/pizza-not-found";
 import { styles as globalStyles } from "@/styles/globalStyles";
 import { PizzaSize } from "@/shared/enums.d";
@@ -38,18 +37,14 @@ export default function PizzaDetail () {
   return (
     // Main Container
     <View style={[globalStyles.container, styles.wrapper]}>
-      <Stack.Screen
-        options={{
-          title: pizza.name,
-        }}
-      />
+      <Stack.Screen options={{ title: pizza.name }} />
       {/* Pizza image and name */}
       <View style={styles.pizzaImage}>
         <Image
           source={{ uri: pizza.image }}
           style={{ width: "100%", aspectRatio: 1 }}
         />
-        <Text style={{ color: Colors.light.color }}>{pizza.name}</Text>
+        <Text style={{ color: Colors.dark.color }}>{pizza.name}</Text>
       </View>
 
       {/* Pizza size selector */}
@@ -63,7 +58,7 @@ export default function PizzaDetail () {
       {/* Button add to cart*/}
       <ButtonPressable
         onPress={handleAddToCart}
-        text={TEXTS.addToCart}
+        text="Update"
         style={{
           width: "100%",
           backgroundColor: Colors.dark.background,
