@@ -6,7 +6,7 @@ export type Pizza = {
   id: number;
   name: string;
   image: string;
-  price: number | string;
+  price: number;
 };
 
 export type CartItem = {
