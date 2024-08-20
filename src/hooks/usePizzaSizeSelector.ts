@@ -1,4 +1,4 @@
-import { PizzaSizeContext } from "@/provider/PizzaSizeContext";
+import { PizzaSizeContext } from "@/provider/PizzaSizeProvider";
 import { useContext } from "react";
 
 export function usePizzaSizeSelector () {

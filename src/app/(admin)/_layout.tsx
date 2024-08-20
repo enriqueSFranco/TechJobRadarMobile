@@ -24,9 +24,7 @@ export default function TabLayout () {
         name="menu"
         options={{
           headerShown: false,
-          tabBarIcon: ({ color }) => (
-            <TabBarIcon name="cutlery" color={color} />
-          ),
+          tabBarIcon: ({ color }) => <TabBarIcon name="list" color={color} />,
         }}
       />
 
@@ -36,14 +34,9 @@ export default function TabLayout () {
         name="orders"
         options={{
           headerShown: false,
-          tabBarIcon: ({ color }) => <TabBarIcon name="list" color={color} />,
-        }}
-      />
-
-      <Tabs.Screen
-        name="profile"
-        options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="list-alt" color={color} />
+          ),
         }}
       />
     </Tabs>

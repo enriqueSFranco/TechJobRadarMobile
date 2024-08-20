@@ -1,6 +1,6 @@
 import { Pizza } from "@/shared/types";
 import { FlatList } from "react-native";
-import { CardPizza } from "./CardPizza";
+import { CardPizza } from "./card-pizza";
 
 type ListPizzaProps = {
   pizzas: Pizza[];
