@@ -7,7 +7,7 @@ import {
   TextInputProps,
 } from "react-native";
 
-type BaseTextInputProps = {
+type TextFieldProps = {
   prompt?: string;
   label?: string;
   value: string;
@@ -15,14 +15,14 @@ type BaseTextInputProps = {
   icon?: React.ReactNode;
 };
 
-export const BaseTextInput = ({
+export const TextField = ({
   prompt = "",
   label,
   value,
   bgColor = "#F4F4F4",
   icon,
   ...rest
-}: BaseTextInputProps & TextInputProps) => {
+}: TextFieldProps & TextInputProps) => {
   const inputWithId = useId();
 
   return (
