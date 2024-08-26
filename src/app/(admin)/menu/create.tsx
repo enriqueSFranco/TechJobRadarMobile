@@ -14,8 +14,6 @@ import { styles as globalStyles } from "@/styles/globalStyles";
 import { useStock } from "@/hooks/useStock";
 import { Colors } from "@/shared/constants.d";
 import { Stack, useLocalSearchParams } from "expo-router";
-import { title } from "process";
-import { text } from "stream/consumers";
 
 const INITIAL_PRODUCT_FORM_VALUES: ProductFormValues = {
   name: "",

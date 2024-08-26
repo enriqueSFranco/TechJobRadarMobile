@@ -10,12 +10,21 @@ type CardOrderProps = {
 export function CardOrder ({ order }: CardOrderProps) {
   const segments = useSegments();
   const { id, created_at, status } = order;
+
+  // 8/21/2024 -> dd/mm/yyyy
+  function timeAgo (date: Date) {
+
+    return "";
+  }
+
   return (
     <Link href={`${segments[0]}/orders/${id}`} asChild>
       <Pressable style={styles.wrapper}>
         <View>
           <Text style={styles.orderIdText}>Order #{id}</Text>
-          <Text style={styles.orderDateText}>{created_at}</Text>
+          <Text style={styles.orderDateText}>
+            {timeAgo(new Date(created_at))}
+          </Text>
         </View>
         <Badged text={status} />
       </Pressable>
