@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-import { Link, router, Stack, useLocalSearchParams } from "expo-router";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import { Image, StyleSheet, Text, View } from "react-native";
+import { router, Stack, useLocalSearchParams } from "expo-router";
 import { PizzaNotFound } from "@/features/ui/molecules/pizza-not-found";
 import { styles as globalStyles } from "@/styles/globalStyles";
 import { PizzaSize } from "@/shared/enums.d";
 import pizzas from "@assets/data/products";
 import { Colors, pizzaSizeLabels, TEXTS } from "@/shared/constants.d";
-import { formatMoney } from "@/helpers/format-money";
+import { PriceUtils } from "@/utils/PriceUtils";
 import { useShoppingCart } from "@/hooks/useShoppingCart";
 import { PizzaSizeSelector } from "@/features/ui/molecules/pizza-size-selector";
 import { ButtonPressable } from "@/features/ui/atoms/button-pressable";
@@ -23,7 +22,7 @@ export default function PizzaDetail () {
     return <PizzaNotFound />;
   }
 
-  let formattedPrice = formatMoney({ value: pizza.price });
+  let formattedPrice = PriceUtils.formatMoney({ value: pizza.price });
 
   function handleSelectPizzaSize (pizzaSize: PizzaSize) {
     setPizzaSize(pizzaSize);

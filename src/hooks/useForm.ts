@@ -1,14 +1,14 @@
-import { useState } from "react"
+import { useState } from "react";
 
 export function useForm<T> (initialState: T) {
-  const [form, setForm] = useState<T>(initialState)
+  const [form, setForm] = useState<T>(initialState);
 
   function handleChange<K extends keyof T> (name: K, value: T[K]) {
-    setForm(prevForm => ({
+    setForm((prevForm) => ({
       ...prevForm,
-      [name]: value
-    }))
+      [name]: value,
+    }));
   }
 
-  return { form, handleChange }
+  return { form, handleChange };
 }

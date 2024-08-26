@@ -1,32 +1,28 @@
 import { useId } from "react";
 import {
-  NativeSyntheticEvent,
   StyleSheet,
   TextInput,
-  TextInputChangeEventData,
   Text,
   View,
   TextInputProps,
 } from "react-native";
 
-type BaseTextInputProps = {
+type TextFieldProps = {
   prompt?: string;
   label?: string;
   value: string;
   bgColor?: `#${string}` | string;
   icon?: React.ReactNode;
-  onChange: (e: NativeSyntheticEvent<TextInputChangeEventData>) => void;
 };
 
-export const BaseTextInput = ({
+export const TextField = ({
   prompt = "",
   label,
   value,
   bgColor = "#F4F4F4",
   icon,
-  onChange,
   ...rest
-}: BaseTextInputProps & TextInputProps) => {
+}: TextFieldProps & TextInputProps) => {
   const inputWithId = useId();
 
   return (
@@ -36,11 +32,9 @@ export const BaseTextInput = ({
         <TextInput
           nativeID={inputWithId}
           placeholder={prompt}
-          value={value}
-          onChangeText={(newText) => onChange(newText)}
           accessibilityLabel={label || prompt}
-          {...rest}
           style={styles.field}
+          {...rest}
         />
         {icon !== undefined ? icon : null}
       </View>
