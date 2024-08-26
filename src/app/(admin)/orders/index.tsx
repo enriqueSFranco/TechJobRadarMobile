@@ -1,9 +1,6 @@
-import { Text, View } from "react-native";
+import { ListOrders } from "@/features/ui/organisms/list-orders";
+import fakeOrders from "@assets/data/orders";
 
 export default function Orders () {
-  return (
-    <View>
-      <Text>my orders</Text>
-    </View>
-  );
+  return <ListOrders orders={fakeOrders} />;
 }

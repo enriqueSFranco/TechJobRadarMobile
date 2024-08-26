@@ -9,7 +9,7 @@ export function useShoppingCart (): ShoppingCartContexType {
 
   if (!ctx) {
     throw new Error(
-      "useShoppingCart debe ser usado dentro de un proveedor de ShoppingCartContex.",
+      "useShoppingCart debe ser usado dentro de un proveedor de ShoppingCartProvider.",
     );
   }
   return ctx;

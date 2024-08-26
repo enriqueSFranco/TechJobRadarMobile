@@ -1,7 +1,8 @@
 import React from "react";
 import { ListPizza } from "@/features/ui/organisms/list-pizza";
-import products from "@assets/data/products";
+import { useStock } from "@/hooks/useStock";
 
 export default function Index () {
-  return <ListPizza pizzas={products} />;
+  const { stock } = useStock();
+  return <ListPizza pizzas={stock} />;
 }

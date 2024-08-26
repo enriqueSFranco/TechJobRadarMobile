@@ -2,7 +2,7 @@ import { createContext, useMemo, useState } from "react";
 import { randomUUID } from "expo-crypto";
 import { CartItem, Pizza, PizzaSize } from "@/shared/types.d";
 import { QuantityChange } from "@/shared/enums.d";
-import { formatMoney } from "@/helpers/format-money";
+import { PriceUtils } from "@/utils/PriceUtils";
 
 export type ShoppingCartContexType = {
   cart: CartItem[];
@@ -91,7 +91,7 @@ export function ShoppingCartProvider ({ children }: ShoppingCartProviderProps) {
 
       total += priceInt * quantity;
     }
-    return formatMoney({ value: total });
+    return PriceUtils.formatMoney({ value: total });
   }, [cart]);
 
   const data: ShoppingCartContexType = {
