@@ -1,6 +1,4 @@
-import { PizzaSize } from "./enums.d";
-
-// constatnes de la app
+// constantes de la app
 const tintColorLight = "#2f95dc";
 const tintColorDark = "#fff";
 export const Colors = {
@@ -18,19 +16,4 @@ export const Colors = {
     tabIconDefault: "#ccc",
     tabIconSelected: tintColorDark,
   },
-};
-
-export const pizzaSizeLabels = [
-  PizzaSize.SMALL,
-  PizzaSize.MEDIUM,
-  PizzaSize.LARGE,
-  PizzaSize.EXTRA_LARGE,
-];
-
-// textos de la app
-export const TEXTS = {
-  pizzaNotFound: "Pizza not found",
-  selectSize: "Select size",
-  priceLabel: "Price",
-  addToCart: "Add to cart",
 };

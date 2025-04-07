@@ -3,8 +3,9 @@
     "experiments": {
       "tsconfigPaths": true
     },
-    "name": "PizzaPlanet",
-    "slug": "PizzaPlanet",
+    "name": "RnAppNews",
+    "newArchEnabled": true,
+    "slug": "RnAppNews",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -14,7 +15,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "scheme": "pizza-planet",
+    "scheme": "rn-app-news",
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
