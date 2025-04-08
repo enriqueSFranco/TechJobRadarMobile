@@ -15,7 +15,13 @@ export default function RootLayout () {
       }}
     >
       <Text style={{ fontSize: 24, fontWeight: "700" }}>Sign in</Text>
-      <TextField placeholder="Email" />
+      <TextField
+        placeholder="Email"
+        autoFocus
+        autoCapitalize="none"
+        keyboardType="email-address"
+        autoComplete="email"
+      />
       <TextField placeholder="Password" secureTextEntry />
       <ButtonPressable
         text="sign in"
