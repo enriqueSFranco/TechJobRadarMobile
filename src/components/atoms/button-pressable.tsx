@@ -31,5 +31,9 @@ const styles = StyleSheet.create({
   defaultButton: {
     justifyContent: "center",
     alignItems: "center",
+    color: "#fff",
+    backgroundColor: "#000",
+    paddingVertical: 12,
+    borderRadius: 4,
   },
 });

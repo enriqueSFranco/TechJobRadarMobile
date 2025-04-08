@@ -8,18 +8,18 @@ import {
 } from "react-native";
 
 type TextFieldProps = {
-  prompt?: string;
+  placeholder?: string;
   label?: string;
-  value: string;
+  value?: string;
   bgColor?: `#${string}` | string;
   icon?: React.ReactNode;
 };
 
 export const TextField = ({
-  prompt = "",
+  placeholder = "",
   label,
   value,
-  bgColor = "#F4F4F4",
+  bgColor = "#fff",
   icon,
   ...rest
 }: TextFieldProps & TextInputProps) => {
@@ -31,8 +31,8 @@ export const TextField = ({
       <View style={[styles.boxInput, { backgroundColor: bgColor }]}>
         <TextInput
           nativeID={inputWithId}
-          placeholder={prompt}
-          accessibilityLabel={label || prompt}
+          placeholder={placeholder}
+          accessibilityLabel={label || placeholder}
           style={styles.field}
           {...rest}
         />
@@ -44,9 +44,10 @@ export const TextField = ({
 
 const styles = StyleSheet.create({
   box: {
-    flex: 1,
-    backgroundColor: "#fff",
     justifyContent: "center",
+    borderColor: "#ccc",
+    borderWidth: 1,
+    borderRadius: 4,
   },
   boxInput: {
     flexDirection: "row",
