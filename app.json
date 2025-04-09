@@ -3,9 +3,9 @@
     "experiments": {
       "tsconfigPaths": true
     },
-    "name": "RnAppNews",
+    "name": "rn-app-full-authentication-sys",
     "newArchEnabled": true,
-    "slug": "RnAppNews",
+    "slug": "rn-app-full-authentication-sys",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

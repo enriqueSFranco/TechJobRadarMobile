@@ -13,7 +13,7 @@ type TextFieldProps = {
   value?: string;
   bgColor?: `#${string}` | string;
   icon?: React.ReactNode;
-};
+} & TextInputProps;
 
 export const TextField = ({
   placeholder = "",
@@ -22,7 +22,7 @@ export const TextField = ({
   bgColor = "#fff",
   icon,
   ...rest
-}: TextFieldProps & TextInputProps) => {
+}: TextFieldProps) => {
   const inputWithId = useId();
 
   return (
@@ -45,11 +45,11 @@ export const TextField = ({
 const styles = StyleSheet.create({
   box: {
     justifyContent: "center",
+  },
+  boxInput: {
     borderColor: "#ccc",
     borderWidth: 1,
     borderRadius: 4,
-  },
-  boxInput: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
@@ -63,7 +63,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
   },
   label: {
-    fontWeight: "600",
+    textTransform: "capitalize",
+    fontWeight: "500",
     color: "#222",
   },
 });

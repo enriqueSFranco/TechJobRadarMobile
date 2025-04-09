@@ -8,11 +8,11 @@ import {
   ViewStyle,
 } from "react-native";
 
-type ButtonPressableProps = PressableProps & {
+type ButtonPressableProps = {
   text: string;
   textStyle?: StyleProp<TextStyle>;
   style?: StyleProp<ViewStyle>;
-};
+} & PressableProps;
 
 export const ButtonPressable = ({
   text,
