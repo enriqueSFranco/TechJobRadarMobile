@@ -8,11 +8,11 @@ import {
   ViewStyle,
 } from "react-native";
 
-type ButtonPressableProps = PressableProps & {
+type ButtonPressableProps = {
   text: string;
   textStyle?: StyleProp<TextStyle>;
   style?: StyleProp<ViewStyle>;
-};
+} & PressableProps;
 
 export const ButtonPressable = ({
   text,
@@ -31,5 +31,9 @@ const styles = StyleSheet.create({
   defaultButton: {
     justifyContent: "center",
     alignItems: "center",
+    color: "#fff",
+    backgroundColor: "#000",
+    paddingVertical: 12,
+    borderRadius: 4,
   },
 });
