@@ -1,10 +1,10 @@
 import { Text, View } from "react-native";
 
-type BadgedProps = {
+type Props = {
   text: string;
 };
 
-export function Badged ({ text }: BadgedProps) {
+export function Badged({ text }: Props) {
   return (
     <View>
       <Text>{text}</Text>

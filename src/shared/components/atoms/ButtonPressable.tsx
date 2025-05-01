@@ -8,7 +8,7 @@ import {
   ViewStyle,
 } from "react-native";
 
-type ButtonPressableProps = {
+type Props = {
   text: string;
   textStyle?: StyleProp<TextStyle>;
   style?: StyleProp<ViewStyle>;
@@ -19,7 +19,7 @@ export const ButtonPressable = ({
   textStyle,
   style,
   ...props
-}: ButtonPressableProps) => {
+}: Props) => {
   return (
     <Pressable {...props} style={[styles.defaultButton, style]}>
       <Text style={textStyle}>{text}</Text>

@@ -1,10 +1,10 @@
 import { Platform, StyleSheet, View } from "react-native";
 
-interface HeaderProps {
+interface Props {
   children: React.ReactNode;
 }
 
-export const Header: React.FC<HeaderProps> = ({ children }) => {
+export const Header: React.FC<Props> = ({ children }) => {
   return <View style={styles.header}>{children}</View>;
 };
 

@@ -7,7 +7,7 @@ import {
   TextInputProps,
 } from "react-native";
 
-type TextFieldProps = {
+type Props = {
   placeholder?: string;
   label?: string;
   value?: string;
@@ -22,7 +22,7 @@ export const TextField = ({
   bgColor = "#fff",
   icon,
   ...rest
-}: TextFieldProps) => {
+}: Props) => {
   const inputWithId = useId();
 
   return (
