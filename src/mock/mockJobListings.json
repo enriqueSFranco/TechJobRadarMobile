@@ -1,0 +1,164 @@
+{
+  "jobListings": [
+    {
+    "title": "Frontend Developer",
+    "postedDate": "2025-04-28",
+    "salary": "$75,000 - $90,000 USD/year",
+    "companyName": "TechGarden Inc.",
+    "location": "Remote - Latin America",
+    "description": "Build and maintain modern UI components using React and TypeScript."
+    },
+    {
+    "title": "Backend Engineer",
+    "postedDate": "2025-04-27",
+    "salary": "$85,000 - $100,000 USD/year",
+    "companyName": "CodeWave",
+    "location": "New York, NY",
+    "description": "Develop REST APIs using Node.js and PostgreSQL in a microservices environment."
+    },
+    {
+    "title": "Mobile Developer",
+    "postedDate": "2025-04-25",
+    "salary": "$80,000 - $95,000 USD/year",
+    "companyName": "AppNest",
+    "location": "Remote",
+    "description": "Create and optimize mobile applications using React Native."
+    },
+    {
+    "title": "DevOps Engineer",
+    "postedDate": "2025-04-23",
+    "salary": "$95,000 - $110,000 USD/year",
+    "companyName": "CloudForge",
+    "location": "Austin, TX",
+    "description": "Maintain CI/CD pipelines and manage cloud infrastructure using AWS."
+    },
+    {
+    "title": "Full Stack Developer",
+    "postedDate": "2025-04-20",
+    "salary": "$90,000 - $105,000 USD/year",
+    "companyName": "NextGen Software",
+    "location": "San Francisco, CA",
+    "description": "Work on end-to-end features using React, Node.js, and GraphQL."
+    },
+    {
+    "title": "Data Analyst",
+    "postedDate": "2025-04-19",
+    "salary": "$70,000 - $85,000 USD/year",
+    "companyName": "InsightIQ",
+    "location": "Chicago, IL",
+    "description": "Analyze data trends and produce actionable business insights."
+    },
+    {
+    "title": "Machine Learning Engineer",
+    "postedDate": "2025-04-17",
+    "salary": "$105,000 - $130,000 USD/year",
+    "companyName": "NeuroTech",
+    "location": "Remote",
+    "description": "Design and train machine learning models for real-world applications."
+    },
+    {
+    "title": "Product Manager",
+    "postedDate": "2025-04-15",
+    "salary": "$100,000 - $120,000 USD/year",
+    "companyName": "BrightVision",
+    "location": "Boston, MA",
+    "description": "Lead product development cycles and align business goals with technology."
+    },
+    {
+    "title": "QA Engineer",
+    "postedDate": "2025-04-14",
+    "salary": "$65,000 - $80,000 USD/year",
+    "companyName": "SoftSure",
+    "location": "Seattle, WA",
+    "description": "Create automated test suites and ensure application stability."
+    },
+    {
+    "title": "UI/UX Designer",
+    "postedDate": "2025-04-12",
+    "salary": "$70,000 - $90,000 USD/year",
+    "companyName": "DesignMosaic",
+    "location": "Remote",
+    "description": "Design intuitive interfaces and user experiences for web and mobile apps."
+    },
+    {
+    "title": "Security Engineer",
+    "postedDate": "2025-04-10",
+    "salary": "$110,000 - $130,000 USD/year",
+    "companyName": "FortiSec",
+    "location": "Denver, CO",
+    "description": "Monitor and protect infrastructure from vulnerabilities and threats."
+    },
+    {
+    "title": "Cloud Architect",
+    "postedDate": "2025-04-09",
+    "salary": "$120,000 - $140,000 USD/year",
+    "companyName": "SkyNetics",
+    "location": "Remote - US Only",
+    "description": "Architect scalable and secure cloud solutions on AWS and Azure."
+    },
+    {
+    "title": "Systems Administrator",
+    "postedDate": "2025-04-08",
+    "salary": "$65,000 - $78,000 USD/year",
+    "companyName": "TechSupportCo",
+    "location": "Atlanta, GA",
+    "description": "Manage internal networks, servers, and system uptime."
+    },
+    {
+    "title": "Technical Writer",
+    "postedDate": "2025-04-06",
+    "salary": "$60,000 - $75,000 USD/year",
+    "companyName": "Docify",
+    "location": "Remote",
+    "description": "Create and maintain technical documentation and user manuals."
+    },
+    {
+    "title": "Business Analyst",
+    "postedDate": "2025-04-04",
+    "salary": "$70,000 - $85,000 USD/year",
+    "companyName": "BizSmart",
+    "location": "Miami, FL",
+    "description": "Translate business needs into technical requirements for dev teams."
+    },
+    {
+    "title": "Technical Support Specialist",
+    "postedDate": "2025-04-03",
+    "salary": "$50,000 - $65,000 USD/year",
+    "companyName": "HelpLine",
+    "location": "Phoenix, AZ",
+    "description": "Provide tier 2 technical support and customer troubleshooting."
+    },
+    {
+    "title": "AI Researcher",
+    "postedDate": "2025-04-01",
+    "salary": "$115,000 - $150,000 USD/year",
+    "companyName": "DeepThought AI",
+    "location": "Remote - Europe",
+    "description": "Explore and develop cutting-edge algorithms for artificial intelligence."
+    },
+    {
+    "title": "Database Administrator",
+    "postedDate": "2025-03-30",
+    "salary": "$80,000 - $100,000 USD/year",
+    "companyName": "DataCore",
+    "location": "Toronto, ON",
+    "description": "Maintain database integrity and performance using PostgreSQL and MySQL."
+    },
+    {
+    "title": "Software Engineer Intern",
+    "postedDate": "2025-03-28",
+    "salary": "$25/hour",
+    "companyName": "StartupHub",
+    "location": "Los Angeles, CA",
+    "description": "Assist in full-stack development and QA for an early-stage startup."
+    },
+    {
+    "title": "Technical Recruiter",
+    "postedDate": "2025-03-26",
+    "salary": "$55,000 - $70,000 USD/year",
+    "companyName": "TalentTrack",
+    "location": "Dallas, TX",
+    "description": "Source and manage the hiring process for tech positions."
+    }
+  ]
+}

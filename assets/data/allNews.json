@@ -1,0 +1,154 @@
+{
+  "all_news": [
+    {
+      "id": "1",
+      "title": "Nuevo lanzamiento de tecnología",
+      "body": "El nuevo dispositivo móvil promete revolucionar el mercado con su diseño innovador y características únicas.",
+      "image": "https://example.com/images/tech_launch.jpg",
+      "create_at": "2025-03-19T10:00:00Z",
+      "author": {
+        "id": "a1",
+        "name": "Carlos Méndez"
+      },
+      "publisher": {
+        "id": "p1",
+        "name": "TechNews"
+      }
+    },
+    {
+      "id": "2",
+      "title": "Crisis económica mundial",
+      "body": "La economía global enfrenta desafíos con una caída en las principales bolsas de valores.",
+      "image": "https://example.com/images/economic_crisis.jpg",
+      "create_at": "2025-03-19T12:00:00Z",
+      "author": {
+        "id": "a2",
+        "name": "Ana López"
+      },
+      "publisher": {
+        "id": "p2",
+        "name": "Global Times"
+      }
+    },
+    {
+      "id": "3",
+      "title": "Avances en la medicina genética",
+      "body": "Investigadores descubren nuevos métodos para combatir enfermedades genéticas heredadas.",
+      "image": "https://example.com/images/genetic_advance.jpg",
+      "create_at": "2025-03-18T15:30:00Z",
+      "author": {
+        "id": "a3",
+        "name": "Sofía Ruiz"
+      },
+      "publisher": {
+        "id": "p3",
+        "name": "Science Daily"
+      }
+    },
+    {
+      "id": "4",
+      "title": "Cambio climático y sus efectos en la biodiversidad",
+      "body": "El calentamiento global está afectando a especies en todo el planeta, poniendo en riesgo ecosistemas completos.",
+      "image": "https://example.com/images/climate_change.jpg",
+      "create_at": "2025-03-17T09:00:00Z",
+      "author": {
+        "id": "a4",
+        "name": "Miguel Gómez"
+      },
+      "publisher": {
+        "id": "p4",
+        "name": "Environmental News"
+      }
+    },
+    {
+      "id": "5",
+      "title": "El futuro del transporte autónomo",
+      "body": "Las principales ciudades del mundo están comenzando a adoptar vehículos autónomos para el transporte público.",
+      "image": "https://example.com/images/autonomous_transport.jpg",
+      "create_at": "2025-03-16T14:20:00Z",
+      "author": {
+        "id": "a5",
+        "name": "Luis Pérez"
+      },
+      "publisher": {
+        "id": "p5",
+        "name": "Tech World"
+      }
+    },
+    {
+      "id": "6",
+      "title": "Reformas en la educación global",
+      "body": "Diversos países están implementando reformas educativas para adaptarse a las nuevas necesidades del siglo XXI.",
+      "image": "https://example.com/images/education_reforms.jpg",
+      "create_at": "2025-03-15T11:15:00Z",
+      "author": {
+        "id": "a6",
+        "name": "Laura Sánchez"
+      },
+      "publisher": {
+        "id": "p6",
+        "name": "Educational Insights"
+      }
+    },
+    {
+      "id": "7",
+      "title": "Desarrollo de energías renovables",
+      "body": "Los avances en energías renovables prometen una mayor eficiencia y menor impacto ambiental en los próximos años.",
+      "image": "https://example.com/images/renewable_energy.jpg",
+      "create_at": "2025-03-14T16:00:00Z",
+      "author": {
+        "id": "a7",
+        "name": "Felipe Torres"
+      },
+      "publisher": {
+        "id": "p7",
+        "name": "Green Planet"
+      }
+    },
+    {
+      "id": "8",
+      "title": "Tendencias en el mercado de criptomonedas",
+      "body": "El mercado de criptomonedas sigue creciendo con nuevas monedas y tecnologías blockchain emergentes.",
+      "image": "https://example.com/images/cryptocurrency_trends.jpg",
+      "create_at": "2025-03-13T17:40:00Z",
+      "author": {
+        "id": "a8",
+        "name": "Javier Martínez"
+      },
+      "publisher": {
+        "id": "p8",
+        "name": "Crypto News"
+      }
+    },
+    {
+      "id": "9",
+      "title": "Reducción de la pobreza en América Latina",
+      "body": "Se han implementado nuevas políticas públicas en América Latina para reducir las tasas de pobreza extrema.",
+      "image": "https://example.com/images/poverty_reduction.jpg",
+      "create_at": "2025-03-12T18:25:00Z",
+      "author": {
+        "id": "a9",
+        "name": "Carla Rodríguez"
+      },
+      "publisher": {
+        "id": "p9",
+        "name": "Latin America News"
+      }
+    },
+    {
+      "id": "10",
+      "title": "El arte digital y su impacto en la cultura",
+      "body": "El arte digital está tomando protagonismo en galerías y museos, cambiando la forma en que se percibe el arte contemporáneo.",
+      "image": "https://example.com/images/digital_art.jpg",
+      "create_at": "2025-03-11T10:30:00Z",
+      "author": {
+        "id": "a10",
+        "name": "Rafael Hernández"
+      },
+      "publisher": {
+        "id": "p10",
+        "name": "Art World"
+      }
+    }
+  ]
+}
